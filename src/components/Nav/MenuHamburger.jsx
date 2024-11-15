@@ -20,10 +20,10 @@ const MenuHamburger = () => {
                 >
                     <span 
                         id="hamburger"
-                        className="border-t-4 w-[26px] after:content-[''] after:block after:w-[26px] after:h-1 after:bg-current after:mt-1 after:transition after:duration-500 after:relative before:content-[''] before:block before:w-[26px] before:h-1 before:bg-current before:mt-1 before:transition before:duration-500 before:relative"
+                        className="border-t-4 w-9 rounded-sm after:content-[''] after:block after:w-9 after:h-1 after:bg-current after:mt-[6px] after:transition after:duration-500 after:relative after:rounded-md before:content-[''] before:block before:w-9 before:h-1 before:bg-current before:mt-[6px] before:transition before:duration-500 before:relative before:rounded-md"
                     ></span>
                 </button>
-                <ul id="menu" className="block absolute w-1/4 top-20 left-0 list-none bg-emerald-800 transition-all ease-in duration-300 z-50 h-0 invisible overflow-y-hidden">
+                <ul id="menu" className="block absolute w-1/2 md:w-1/3 top-20 left-0 list-none bg-green-950 transition-all ease-in duration-300 z-50 h-0 invisible overflow-y-hidden">
                     <li className="p-4">Item 1</li> 
                     <li className="p-4">Item 2</li> 
                     <li className="p-4">Item 3</li> 
