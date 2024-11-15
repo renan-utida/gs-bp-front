@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+#nav.active #hamburger{
+    border-top-color: transparent;
+}
+
+#nav.active #hamburger::before{
+    transform: rotate(135deg);
+}
+
+#nav.active #hamburger::after{
+    transform: rotate(-135deg);
+    top: -7px;
+}
+
+#nav.active #menu{
+    height: calc(100vh - 80px);
+    visibility: visible;
+    overflow-y: auto;
+}
