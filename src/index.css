@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+body::-webkit-scrollbar {
+    background-color: #000;
+    width: .8rem;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 7px;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(7, 64, 3);
+    border-radius: 7px;
+}
 
 #nav.active #hamburger{
     border-top-color: transparent;
@@ -20,4 +34,19 @@
     height: calc(100vh - 80px);
     visibility: visible;
     overflow-y: auto;
+}
+
+#menu::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+#menu::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #000;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+#menu::-webkit-scrollbar-thumb {
+    background-color: #616162;
+    border-radius: 10px;
 }
