@@ -4,7 +4,7 @@ import MenuHamburger from './MenuHamburger'
 const Nav = () => {
 
     return(
-        <header className="w-full h-20 bg-green-900 px-4 z-0">
+        <header className="fixed top-0 left-0 w-full h-20 bg-green-900 px-4 shadow-lg z-50">
             <div className='flex flex-row justify-between h-full items-center'>
                 <MenuHamburger/>               
                 <div className='flex flex-row gap-2 h-full items-center justify-center z-10'>

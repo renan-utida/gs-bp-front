@@ -64,7 +64,7 @@ const Slideshow = () => {
     ];
 
     return(
-        <section className="w-full h-[calc(100vh-80px)] lg:h-[calc(105vh-80px)] xl:h-[calc(110vh-80px)] relative overflow-hidden">
+        <section className="w-full h-[calc(100vh-80px)] lg:h-[calc(105vh-80px)] xl:h-[calc(109vh-80px)] relative overflow-hidden">
             {slides.map((slide, index) => ( // Para cada slide da lista "slides", renderiza um componente de Slide com os dados da imagem, título e subtítulo.
                 <div 
                     key={index}
@@ -79,10 +79,10 @@ const Slideshow = () => {
                             className="w-full h-full object-cover transition-transform duration-[1.7s] ease-in-out hover:scale-110" 
                         />
                         {/* Aplica um gradiente sobre a imagem para dar contraste */}
-                        <div className='absolute bottom-0 w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0.08)] to-[rgba(0,0,0,1)]'></div>
+                        <div className='absolute bottom-0 w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0.1)] to-[rgba(0,0,0,1)]'></div>
 
                         {/* Exibe o título do slide */}
-                        <h1 className="absolute bottom-16 sm:bottom-20 lg:bottom-28 xl:bottom-36 left-5 text-white text-3xl leading-10 min-[450px]:text-[34px] sm:text-[39px] lg:text-[44px] xl:text-5xl font-extrabold my-10 mr-10 ml-5">{slide.title}</h1>
+                        <h2 className="absolute bottom-16 sm:bottom-20 lg:bottom-28 xl:bottom-36 left-5 text-white text-3xl leading-10 min-[450px]:text-[34px] sm:text-[39px] lg:text-[44px] xl:text-5xl font-extrabold my-10 mr-10 ml-5">{slide.title}</h2>
 
                         {/* Exibe o subtítulo do slide */}
                         <p className="absolute bottom-11 lg:bottom-20 xl:bottom-28 left-5 text-white text-lg sm:text-xl italic my-6 mr-10 ml-5">{slide.subtitle}</p>
@@ -106,7 +106,7 @@ const Slideshow = () => {
             ><FaAngleRight /></a>
 
             {/*Pontos abaixo do slide para indicar qual o slide*/}
-            <div className="text-center relative bottom-14 lg:bottom-24 xl:bottom-32">
+            <div className="text-center relative bottom-14 lg:bottom-24 xl:bottom-28">
 
                 {slides.map((_, index) => ( // Para cada slide da lista "slides", renderiza um componente (os pontos de navegação). O primeiro argumento (slide) é ignorado com o uso de "_" porque não é necessário neste caso.
                     <div
