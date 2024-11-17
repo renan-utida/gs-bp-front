@@ -71,13 +71,15 @@ const Slideshow = () => {
                     className={`w-full h-full text-justify relative transition-opacity duration-500 ease-in-out ${slideIndex === index + 1 ? 'opacity-100 visible block' : 'opacity-0 invisible hidden'
                     }`}
                 >
-                    <Link to={slide.link}>
-                        {/* Renderiza a imagem do slide em um link */}
-                        <img 
-                            src={slide.image} 
-                            alt={`Slide ${index + 1}`}
-                            className="w-full h-full object-cover transition-transform duration-[1.7s] ease-in-out hover:scale-110" 
-                        />
+                    <Link to={slide.link} className='relative block w-full h-full overflow-hidden group'>
+                        {/* Container para a imagem */}
+                        <div className="w-full h-full">
+                            <img 
+                                src={slide.image} 
+                                alt={`Slide ${index + 1}`}
+                                className="w-full h-full object-cover transition-transform duration-[1200ms] ease-in-out group-hover:scale-110"
+                            />
+                        </div>
                         {/* Aplica um gradiente sobre a imagem para dar contraste */}
                         <div className='absolute bottom-0 w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0.1)] to-[rgba(0,0,0,1)]'></div>
 
@@ -97,12 +99,12 @@ const Slideshow = () => {
             <a 
                 href="#" 
                 onClick={prevSlide}
-                className="cursor-pointer absolute min-[280px]:top-[33%] min-[380px]:top-[38%] min-[500px]:top-[42%] sm:top-[45%] xl:top-[42%] left-0 text-2xl xl:text-3xl text-black bg-white/50 p-4 xl:p-5 ml-3 rounded-full select-none transition-all ease-in-out duration-300 hover:bg-white/85"
+                className="cursor-pointer absolute min-[280px]:top-[33%] min-[380px]:top-[38%] min-[500px]:top-[42%] sm:top-[45%] xl:top-[42%] left-0 text-2xl xl:text-3xl max-[430px]:text-xl text-black bg-white/50 p-4 xl:p-5 ml-3 rounded-full select-none transition-all ease-in-out duration-300 hover:bg-white/85"
             ><FaAngleLeft /></a>
             <a 
                 href="#"
                 onClick={nextSlide}
-                className="cursor-pointer absolute min-[280px]:top-[33%] min-[380px]:top-[38%] min-[500px]:top-[42%] sm:top-[45%] xl:top-[42%] right-0 text-2xl xl:text-3xl text-black bg-white/50 p-4 xl:p-5 mr-3 rounded-full select-none transition-all ease-in-out duration-300 hover:bg-white/85"
+                className="cursor-pointer absolute min-[280px]:top-[33%] min-[380px]:top-[38%] min-[500px]:top-[42%] sm:top-[45%] xl:top-[42%] right-0 text-2xl xl:text-3xl max-[430px]:text-xl text-black bg-white/50 p-4 xl:p-5 mr-3 rounded-full select-none transition-all ease-in-out duration-300 hover:bg-white/85"
             ><FaAngleRight /></a>
 
             {/*Pontos abaixo do slide para indicar qual o slide*/}

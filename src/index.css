@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    font-family: 'Bookman Old Style';
+}
+
 body::-webkit-scrollbar {
     background-color: #000;
     width: .8rem;
