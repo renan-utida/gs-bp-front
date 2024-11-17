@@ -48,7 +48,7 @@ const CardSolucoes = () => {
                 <div className="relative flex flex-col md:w-1/2 xl:mr-10 xl:ml-5 xl:my-5">
                     <h3 className="text-3xl md:text-4xl lg:text-[38px] xl:text-[40px] font-extrabold text-emerald-600 mb-2 lg:mb-6">Geração de Energia</h3>
                     <p className="mb-5 text-justify text-lg min-[460px]:text-xl italic sm:text-2xl lg:text-[27px] xl:text-[29px] xl:leading-9 ">Verifique a geração de energia em algumas cidades em tempo real!</p>
-                    <Link to='/' className="hidden md:block text-center mt-4 w-full py-3 sm:py-4 xl:py-5 text-white font-bold text-xl sm:text-2xl xl:text-3xl bg-green-600 hover:bg-green-700 rounded-3xl border-[3px] border-black transition-colors ease-in-out duration-150 xl:absolute xl:bottom-0">Acessar</Link>
+                    <Link to='/geracao-energia' className="hidden md:block text-center mt-4 w-full py-3 sm:py-4 xl:py-5 text-white font-bold text-xl sm:text-2xl xl:text-3xl bg-green-600 hover:bg-green-700 rounded-3xl border-[3px] border-black transition-colors ease-in-out duration-150 xl:absolute xl:bottom-0">Acessar</Link>
                 </div>
                 <div className="md:w-1/2 md:ml-10 xl:ml-10 xl:mr-5 xl:my-5 flex items-center justify-center">
                     <img 

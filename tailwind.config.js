@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'geracao-energia': "url('./src/assets/images/background-geracao-energia.png')",
+      },
+    },
   },
   plugins: [],
 }

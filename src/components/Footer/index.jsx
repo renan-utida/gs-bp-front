@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
 
     return(
-        <footer className="text-white w-full h-auto p-10 sm:px-20 sm:pt-20 bg-green-950">
+        <footer className="text-white w-full h-auto p-10 sm:px-20 sm:pt-16 bg-[#072b07] border-t-4 border-yellow-500">
             <div className='flex flex-col'>
                 <Link to='/' className='flex flex-row items-center gap-5'>
                     <h2 className="text-[33px] sm:text-5xl md:text-6xl lg:text-7xl font-bold">Bright Path</h2>
@@ -23,7 +23,7 @@ const Footer = () => {
                                 <Link to='/' className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Cálculo Energético</Link>
                             </li>
                             <li className='mb-2 sm:mb-3'>
-                                <Link to='/' className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Geração de Energia</Link>
+                                <Link to='/geracao-energia' className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Geração de Energia</Link>
                             </li>
                             <li className='mb-2 sm:mb-3'>
                                 <Link to='/' className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Quiz</Link>
@@ -64,7 +64,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p className='text-center text-2xl max-sm:text-lg max-[500px]:text-base text-green-700 italic mt-20 font-bold'>@2024 - Todos os direitos reservados</p>
+            <p className='text-center text-2xl max-sm:text-lg max-[500px]:text-base text-green-700 italic mt-20 pb-1 font-bold'>@2024 - Todos os direitos reservados</p>
         </footer>
     )
 }

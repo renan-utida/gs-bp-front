@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Error from './routes/Error/index.jsx'
 import Home from './routes/Home/index.jsx'
+import GeracaoEnergia from './routes/GeracaoEnergia/index.jsx'
 
 /*Criando a função createBrowserRouter*/
 const router = createBrowserRouter([
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
 
     // Criando as rotas filhas
     children: [
-      { path: '/', element: <Home/>}
+      { path: '/', element: <Home/>},
+      { path: 'geracao-energia', element: <GeracaoEnergia/>},
     ]
   }
 ])

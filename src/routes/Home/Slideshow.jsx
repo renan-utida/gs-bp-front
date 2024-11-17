@@ -59,7 +59,7 @@ const Slideshow = () => {
           image: SlideGeracaoEnergia,
           title: 'Acompanhe em tempo real a produção de energia em algumas comunidades!',
           subtitle: 'Clique aqui e confira!',
-          link: '/',
+          link: '/geracao-energia',
         }
     ];
 
