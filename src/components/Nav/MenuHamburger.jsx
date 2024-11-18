@@ -1,16 +1,41 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import { FaHome } from "react-icons/fa";
 import { FaBolt } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { MdLogin, MdLogout } from "react-icons/md";
 
-const MenuHamburger = () => {
+const MenuHamburger = ({isAuthenticated, handleLogout}) => {
 
     // Estado para controlar se o menu está ativo ou não
     const [menuActive, setMenuActive] = useState(false);
 
     // Função para alternar o estado do menu
-    const toggleMenu = () => {
+    const toggleMenu = (event) => {
+        event.preventDefault();  // Evita comportamentos indesejados ao clicar
         setMenuActive(!menuActive); // Alterna entre true e false
+    };
+
+    // Função para fechar o menu ao clicar em um link
+    const closeMenu = () => {
+        setMenuActive(false);
+    };
+
+    const logout = () => {
+        sessionStorage.removeItem("usuario");
+        sessionStorage.removeItem("usuarioDados");
+        // Adicione qualquer outra chave específica de usuário que esteja no sessionStorage
+        window.location.reload(); // Opcional, para garantir que os dados antigos não fiquem na memória
+    };
+
+    const handleQuizNavigation = () => {
+        if (isAuthenticated) {
+            navigate("/quiz");
+            closeMenu();
+        } else {
+            navigate("/login");
+            closeMenu();
+        }
     };
 
     return(
@@ -26,21 +51,37 @@ const MenuHamburger = () => {
                         className="border-t-4 w-9 rounded-sm after:content-[''] after:block after:w-9 after:h-1 after:bg-current after:mt-[6px] after:transition after:duration-500 after:relative after:rounded-md before:content-[''] before:block before:w-9 before:h-1 before:bg-current before:mt-[6px] before:transition before:duration-500 before:relative before:rounded-md"
                     ></span>
                 </button>
-                <ul id="menu" className="block absolute w-1/2 md:w-1/3 top-20 left-0 list-none bg-[#000000] transition-all ease-in duration-300 z-50 h-0 invisible overflow-y-hidden">
+                <ul id="menu" className="block text-white absolute w-1/2 md:w-1/3 top-20 left-0 list-none bg-[#000000] transition-all ease-in duration-300 z-50 h-0 invisible overflow-y-hidden">
                     <li>
-                        <Link to='/' className="py-6 px-4 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
-                            <FaHome className="w-6 lg:w-8 h-6 lg:h-8 mr-3"/><p className="mb-[2px] max-[400px]:text-base text-xl lg:text-2xl">Página Principal</p>
+                        <Link to='/' onClick={closeMenu} className="py-6 px-4 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
+                            <FaHome className="w-6 lg:w-8 h-6 lg:h-8 mr-5"/>
+                            <p className="mb-[2px] max-[400px]:text-base text-xl lg:text-2xl">Página Principal</p>
                         </Link>
                     </li> 
                     <li>
-                        <Link to='/geracao-energia' className="py-6 px-4 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
-                            <FaBolt className="w-6 lg:w-8 h-6 lg:h-8 mr-3"/><p className="mb-[2px] max-[400px]:text-base text-xl lg:text-2xl">Geração de Energia</p>
+                        <Link to='/geracao-energia' onClick={closeMenu} className="py-6 px-4 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
+                            <FaBolt className="w-6 lg:w-8 h-6 lg:h-8 mr-5"/>
+                            <p className="mb-[2px] max-[400px]:text-base text-xl lg:text-2xl">Geração de Energia</p>
                         </Link>
                     </li> 
+                    {isAuthenticated ? ( 
+                        <li>
+                            <a onClick={() => {handleLogout(); closeMenu(); logout();}} className="py-6 px-4 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
+                                <MdLogout className="w-6 lg:w-8 h-6 lg:h-8 mr-5"/>
+                                <p className="mb-[2px] max-[400px]:text-base text-xl lg:text-2xl">Sair</p>
+                            </a>
+                        </li>
+                    ) : ( 
+                        <li>
+                            <Link to="/login" onClick={closeMenu} className="py-6 px-4 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
+                                <MdLogin className="w-6 lg:w-8 h-6 lg:h-8 mr-5"/>
+                                <p className="mb-[2px] max-[400px]:text-base text-xl lg:text-2xl">Login</p>
+                            </Link>
+                        </li> 
+                    )}
                     <li className="p-4">Item 3</li> 
                     <li className="p-4">Item 4</li> 
                     <li className="p-4">Item 5</li> 
-                    <li className="p-4">Item 6</li>
                 </ul>
             </nav>
         </div>
