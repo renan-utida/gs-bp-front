@@ -96,3 +96,11 @@ body::-webkit-scrollbar-thumb {
         margin-top: 22px;
     }
 }
+
+.sombra-login{
+    text-shadow: black 3px 3px 5px;
+}
+
+.sem-sombra{
+    text-shadow: none;
+}
