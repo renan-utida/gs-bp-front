@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaBoltLightning, FaLocationDot, FaWhmcs } from "react-icons/fa6";
+import { FaAngleUp, FaBoltLightning, FaLocationDot, FaWhmcs } from "react-icons/fa6";
 
 
 const InfoEnergia = () => {
@@ -273,24 +273,21 @@ const InfoEnergia = () => {
     ];
 
     return (
-        <section className="flex flex-col gap-3 sm:gap-4 md:gap-5 items-center mx-20 max-sm:mx-8 max-[335px]:mx-6 mt-4 sm:mt-10 pb-8 sm:pb-10">
+        <section className="flex flex-col gap-3 sm:gap-4 md:gap-5 xl:gap-6 items-center mx-20 max-sm:mx-8 max-[335px]:mx-6 mt-4 sm:mt-10 xl:mt-12 pb-8 sm:pb-10 md:pb-12 lg:pb-14 xl:pb-16">
             {dadosInfo.map((item, index) => (
                 <div key={index} className="flex flex-col w-full">
                     <button
                         id="btn-accordion"
-                        className={`flex gap-2 py-5 sm:py-7 pl-[30px] pr-9 bg-white relative text-left text-base min-[350px]:text-lg sm:text-xl text-black font-bold border-[3px] sm:border-4 border-yellow-500 my-2 rounded-3xl transition-all ease-in-out duration-300 cursor-pointer hover:underline ${activeIndices.includes(index) ? "active" : ""}`}
+                        className={`flex gap-2 min-[500px]:gap-3 md:gap-4 xl:gap-6 py-5 min-[500px]:py-6 sm:py-7 lg:py-8 xl:py-9 pl-[30px] xl:pl-[35px] pr-9 bg-white relative text-left text-base min-[350px]:text-lg min-[500px]:text-2xl sm:text-[28px] md:text-[32px] lg:text-4xl xl:text-[40px] text-black font-bold border-[3px] sm:border-4 lg:border-[6px] xl:border-8 border-yellow-500 my-2 rounded-3xl transition-all ease-in-out duration-300 cursor-pointer hover:underline ${activeIndices.includes(index) ? "active" : ""}`}
                         onClick={() => togglePanel(index)}
                     >
-                        <FaLocationDot id="map-icon" className="w-5 h-5 text-yellow-500"/> {item.bairro}
-                        <svg
-                            className={`absolute right-[30px] top-1/2 transform -translate-y-1/2 rotate-180 transition-transform delay-300 text-emerald-500 w-6 h-6 ${activeIndices.includes(index) ? "open" : ""}`}
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M2.793 15.957a1 1 0 0 0 1.414 0L12 8.164l7.793 7.793a1 1 0 1 0 1.414-1.414L12 5.336l-9.207 9.207a1 1 0 0 0 0 1.414z"></path>
-                        </svg>
+                        <FaLocationDot id="map-icon" className="w-5 h-5 min-[500px]:w-7 min-[500px]:h-7 md:h-8 md:w-8 lg:w-9 lg:h-9 xl:h-11 xl:w-11 text-yellow-500 mt-[2px] xl:mt-0"/> {item.bairro}
+
+                        <FaAngleUp className={`absolute right-[30px] xl:right-[35px] top-1/2 transform -translate-y-1/2 rotate-180 transition-transform duration-300 text-green-700 text-2xl min-[500px]:text-3xl md:text-4xl lg:text-5xl xl:text-6xl ${activeIndices.includes(index) ? "open" : ""}`}/>
+
                     </button>
                     <div
-                        className="mb-5 bg-[#dedede] border-t-0 border-x-[3px] sm:border-x-4 border-b-[3px] sm:border-b-4 border-yellow-500 w-full rounded-b-3xl hidden overflow-hidden"
+                        className="-mt-2 mb-5 bg-[#dedede] border-t-0 border-x-[3px] sm:border-x-4 lg:border-x-[6px] xl:border-x-8 border-b-[3px] sm:border-b-4 lg:border-b-[6px] xl:border-b-8 border-yellow-500 w-full rounded-b-3xl hidden overflow-hidden"
                         style={{
                             display: activeIndices.includes(index) ? "block" : "none",
                         }}
