@@ -17,7 +17,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: rgb(7, 64, 3);
+    background-color: #074003;
     border-radius: 7px;
 }
 
@@ -53,4 +53,22 @@ body::-webkit-scrollbar-thumb {
 #menu::-webkit-scrollbar-thumb {
     background-color: #616162;
     border-radius: 10px;
+}
+
+#btn-accordion.active svg{
+    transform: translateY(-50%) rotate(360deg);
+}
+
+#btn-accordion.active, #btn-accordion:hover{
+    background-color: #dedede;
+}
+
+#btn-accordion.active{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: none;
+}
+
+#btn-accordion.active #map-icon{
+    margin-top: 10px;
 }
