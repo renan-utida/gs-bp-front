@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaAngleUp, FaBoltLightning, FaLocationDot, FaWhmcs } from "react-icons/fa6";
 
 
@@ -22,7 +22,23 @@ const InfoEnergia = () => {
         }
     };
 
-    // Lista de Dados e informacoes sobre o bairro para o accordion
+    const [efficiency, setEfficiency] = useState("Carregando...");
+
+    // Função para comunicar-se com o back-end do MongoDB
+    useEffect(() => {
+        const getEfficiency = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/efficiency');
+                const data = await response.json();
+                setEfficiency(data.attrValue ?? "Nenhum valor encontrado");
+            } catch (error) {
+                setEfficiency(`Erro ao carregar -> ${error}`);
+            }
+        };
+        getEfficiency();
+    }, []);
+
+    // Lista de Dados e informacoes sobre o bairro
     const dadosInfo = [
         {
             bairro: "Vila Antonieta",
@@ -34,7 +50,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-2xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                     <div className="flex flex-col my-4 md:w-2/5 md:justify-between xl:p-1">
@@ -42,14 +58,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">28.382.754 kW</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}.</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">120.248 kWh </p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                     </div>
@@ -59,7 +75,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-3xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                 </div>
@@ -75,7 +91,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-2xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                     <div className="flex flex-col my-4 md:w-2/5 md:justify-between xl:p-1">
@@ -83,14 +99,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">28.382.754 kW</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">120.248 kWh </p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                     </div>
@@ -100,7 +116,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-3xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                 </div>
@@ -116,7 +132,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-2xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                     <div className="flex flex-col my-4 md:w-2/5 md:justify-between xl:p-1">
@@ -124,14 +140,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">28.382.754 kW</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">120.248 kWh </p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                     </div>
@@ -141,7 +157,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-3xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                 </div>
@@ -157,7 +173,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-2xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                     <div className="flex flex-col my-4 md:w-2/5 md:justify-between xl:p-1">
@@ -165,14 +181,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">28.382.754 kW</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">120.248 kWh </p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                     </div>
@@ -182,7 +198,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-3xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                 </div>
@@ -198,7 +214,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-2xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                     <div className="flex flex-col my-4 md:w-2/5 md:justify-between xl:p-1">
@@ -206,14 +222,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">28.382.754 kW</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">120.248 kWh </p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                     </div>
@@ -223,7 +239,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-3xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                 </div>
@@ -239,7 +255,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-2xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                     <div className="flex flex-col my-4 md:w-2/5 md:justify-between xl:p-1">
@@ -247,14 +263,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">28.382.754 kW</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">120.248 kWh </p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
                             </div>
                         </div>
                     </div>
@@ -264,7 +280,7 @@ const InfoEnergia = () => {
                             className="w-full h-full border-[1px] border-black rounded-3xl shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]"
                             allowFullScreen
                             loading = "lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
                 </div>
