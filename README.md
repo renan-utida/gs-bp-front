@@ -5,8 +5,25 @@ Esse projeto foi desenvolvido utilizando Vite + ReactJS com o principal objetivo
 
 ## Tecnologias Utilizadas
 - ReactJS (JavaScript);
+- MongoDB (Back End);
 - NodeJS;
+- Express;
+- CORS
+- Dotenv;
 
+## Manual de inicialização (Desenvolvimento)
+> [!NOTE]
+> Tenha o NodeJS instalado em sua máquina.
+1. Clone o projeto em sua máquina: `git clone git@github.com:Bright-Path-Team/bp-front.git`;
+2. Navegue até o projeto: `cd bp-front`;
+3. Realize a instalação das dependências do projeto: `npm install`;
+4. Configure as variáveis ambientes em um arquivo `.env` da seguinte forma (sem aspas, mesmo sendo do tipo string):
+    ```
+    REACT_APP_IP=
+    REACT_APP_COLLECTION=
+    ```
+5. Rode o servidor com o listener do mongo_db: `node server_mongodb`;
+6. Inicialize o ambiente de desenvolvimento da página web: `npm run dev`;
 
 ## Desenvolvedores do projeto:
 
