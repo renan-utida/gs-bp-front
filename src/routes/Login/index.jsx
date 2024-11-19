@@ -67,7 +67,7 @@ const Login = () => {
     return(
         <main className="mt-20 min-h-screen flex justify-center items-start relative bg-login bg-cover bg-center sombra-login">
             <div className="absolute inset-0 bg-black/50 bg-gradient-to-b from-black/50 to-black/30"></div>
-            <section className="relative bg-white/10 backdrop-blur-[10px] border-2 border-white/80 py-8 sm:py-6 xl:py-8 max-[400px]:px-4 px-6 lg:px-8 rounded-2xl my-12 md:my-14 xl:mt-16 xl:mb-20 mx-auto max-[400px]:w-72 md:min-w-[25rem] lg:min-w-[30rem] xl:min-w-[37rem]">
+            <section className="relative bg-white/10 backdrop-blur-[10px] border-4 border-green-700 py-8 sm:py-6 xl:py-8 max-[400px]:px-4 px-6 lg:px-8 rounded-2xl my-12 md:my-14 xl:mt-16 xl:mb-20 mx-auto max-[400px]:w-72 md:min-w-[25rem] lg:min-w-[30rem] xl:min-w-[37rem]">
                 <form onSubmit={handleSubmit}>
                     <h1 className="text-4xl sm:text-[40px] md:text-[44px] md:py-2 text-center text-white font-bold">Login</h1>
                     <div className="relative w-full max-[400px]:h-14 h-16 sm:h-[68px] mt-7 mx-auto">

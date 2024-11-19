@@ -213,23 +213,24 @@ const CriarConta = () => {
     }, [modalprofile]);
 
     return (
-        <main className="mt-20 min-h-screen flex justify-center items-start relative bg-login bg-cover bg-center sombra-login">
-            <section>
+        <main className="mt-20 min-h-screen flex justify-center items-start relative bg-criar-conta bg-cover bg-center sombra-login">
+            <div className="absolute inset-0 bg-black/50 bg-gradient-to-b from-black/50 to-black/30"></div>
+            <section className="relative bg-white/10 backdrop-blur-[10px] border-4 border-yellow-500/80 py-8 sm:py-6 xl:py-8 max-[400px]:px-4 px-6 lg:px-8 rounded-2xl my-8 md:my-10 xl:mt-12 xl:mb-16 mx-auto max-[500px]:w-[24rem] max-[400px]:w-72 md:min-w-[25rem] lg:min-w-[30rem] xl:min-w-[37rem]">
                 <form onSubmit={handleSubmit}>
-                    <h1>Criar Conta</h1>
-                    <div>
-                        <div className="image-profile-box" onClick={toggleModal}>
-                            <img src={usuarios.avatar} alt="Icone de perfil do usuario" />
-                            <a className="trocar-imagem-link">
-                                <FaImage /><br />Trocar imagem
+                    <h1 className="text-4xl sm:text-[40px] md:text-[44px] md:py-2 text-center text-white font-bold">Criar Conta</h1>
+                    <div className="flex flex-col items-center mt-2">
+                        <div className="image-profile-box my-[10px] mx-auto max-md:w-[120px] max-lg:w-[140px] w-[150px] max-md:h-[120px] max-lg:h-[140px] h-[150px] bg-white rounded-full relative overflow-hidden cursor-pointer border-[6px] border-green-700" onClick={toggleModal}>
+                            <img src={usuarios.avatar} alt="Icone de perfil do usuario" className="absolute w-full h-full top-0 left-0 object-cover transition-all duration-300 ease-in-out" />
+                            <a className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white py-[5px] px-[10px] rounded-md text-center sm:text-sm font-bold opacity-0 transition-opacity duration-300 ease-in-out flex justify-center max-sm:text-xs">
+                                <FaImage className="absolute w-5 h-4 text-white"/><br />Trocar imagem
                             </a>
                         </div>
-                        <a className="img-modal-link" onClick={toggleModal}>
+                        <a className="text-base md:text-lg text-green-400 flex flex-row gap-[5px] cursor-pointer font-bold transition-colors duration-200 ease-linear hover:text-green-600/90" onClick={toggleModal}>
                             Alterar Foto de Perfil
                         </a>
                     </div>
 
-                    <div className="input-field">
+                    <div className="relative w-full max-[400px]:h-14 h-16 sm:h-[68px] mt-7 mx-auto">
                         <input 
                             type="text" 
                             name="nome"
@@ -238,6 +239,7 @@ const CriarConta = () => {
                             placeholder="Nome"
                             required 
                             /* o onChange é utili em situações que é necessários reagir a cada alteração do input */
+                            className="w-full h-full bg-transparent outline-none border-2 border-white/80 rounded-full max-[400px]:text-[15px] max-sm:text-lg text-xl text-white py-5 px-6 placeholder:text-white pr-12"
                         />
                         {/* Regras*/}
                         {!nomeValido && (
@@ -246,7 +248,7 @@ const CriarConta = () => {
                             </span>
                         )}
                     </div>
-                    <div className="input-field">
+                    <div className="relative w-full max-[400px]:h-14 h-16 sm:h-[68px] mt-7 mx-auto">
                         <input 
                             type="text" 
                             name="sobrenome"
@@ -255,6 +257,7 @@ const CriarConta = () => {
                             required 
                             /* o onChange é utili em situações que é necessários reagir a cada alteração do input */
                             onChange={handleSobrenomeChange}
+                            className="w-full h-full bg-transparent outline-none border-2 border-white/80 rounded-full max-[400px]:text-[15px] max-sm:text-lg text-xl text-white py-5 px-6 placeholder:text-white pr-12"
                         />
                         {!sobrenomeValido && (
                             <span style={{ color: "red", fontSize: "0.9rem", marginTop: "1px", display: "block" }}>
@@ -262,7 +265,7 @@ const CriarConta = () => {
                             </span>
                         )}
                     </div>
-                    <div className="input-field">
+                    <div className="relative w-full max-[400px]:h-14 h-16 sm:h-[68px] mt-7 mx-auto">
                         <input 
                             type="text" 
                             name="usuario"
@@ -271,10 +274,11 @@ const CriarConta = () => {
                             required 
                             /* o onChange é utili em situações que é necessários reagir a cada alteração do input */
                             onChange={handleChange}
+                            className="w-full h-full bg-transparent outline-none border-2 border-white/80 rounded-full max-[400px]:text-[15px] max-sm:text-lg text-xl text-white py-5 px-6 placeholder:text-white pr-12"
                         />
-                        <FaUser/>
+                        <FaUser className="absolute right-6 top-1/2 -translate-y-1/2 text-[19px] sm:text-xl text-white"/>
                     </div>
-                    <div className="input-field">
+                    <div className="relative w-full max-[400px]:h-14 h-16 sm:h-[68px] mt-7 mx-auto">
                         <input 
                             type="email" 
                             name="email"
@@ -283,15 +287,16 @@ const CriarConta = () => {
                             required 
                             /* o onChange é utili em situações que é necessários reagir a cada alteração do input */
                             onChange={handleEmailChange}
+                            className="w-full h-full bg-transparent outline-none border-2 border-white/80 rounded-full max-[400px]:text-[15px] max-sm:text-lg text-xl text-white py-5 px-6 placeholder:text-white pr-12"
                         />
-                        <MdEmail />
+                        <MdEmail className="absolute right-6 top-1/2 -translate-y-1/2 text-[19px] sm:text-xl text-white"/>
                         {!emailValido && (
                             <span style={{ color: "red", fontSize: "0.9rem", marginTop: "1px", display: "block" }}>
                                 O email deve conter "@"
                             </span>
                         )}
                     </div>
-                    <div className="input-field">
+                    <div className="relative w-full max-[400px]:h-14 h-16 sm:h-[68px] mt-7 mx-auto">
                         <input 
                             type={mostrarSenha ? "text" : "password"}
                             name="senha"
@@ -300,18 +305,19 @@ const CriarConta = () => {
                             required
                             /* o onChange é utili em situações que é necessários reagir a cada alteração do input */
                             onChange={handleSenhaChange}
+                            className="w-full h-full bg-transparent outline-none border-2 border-white/80 rounded-full max-[400px]:text-[15px] max-sm:text-lg text-xl text-white py-5 px-6 placeholder:text-white pr-24"
                         />
                         <span onClick={() => setMostrarSenha(!mostrarSenha)} >
-                            {mostrarSenha ? <FaEye /> : <FaEyeSlash />} {/* Ícone para mostrar/ocultar senha */}
+                            {mostrarSenha ? <FaEye className="absolute top-1/2 -translate-y-1/2 right-14 max-sm:text-xl text-2xl text-white cursor-pointer transition-colors ease-in-out duration-300 hover:text-white/70 select-none"/> : <FaEyeSlash className="absolute top-1/2 -translate-y-1/2 right-14 max-sm:text-xl text-2xl text-white cursor-pointer transition-colors ease-in-out duration-300 hover:text-white/70 select-none"/>} {/* Ícone para mostrar/ocultar senha */}
                         </span>
-                        <FaLock/>
+                        <FaLock className="absolute right-6 top-1/2 -translate-y-1/2 text-[19px] sm:text-xl text-white"/>
                         {senhaValida === false && (
                             <span style={{ color: "red", fontSize: "0.9rem", marginTop: "1px", display: "block" }}>
                                 Mínimo 8 caracteres, 1 letra maiúscula e 1 número.
                             </span>
                         )}
                     </div>
-                    <div className="input-field">
+                    <div className="relative w-full max-[400px]:h-14 h-16 sm:h-[68px] mt-7 mx-auto">
                         <input 
                             type={mostrarConfirmarSenha ? "text" : "password"}
                             name="confirmarSenha"
@@ -320,18 +326,19 @@ const CriarConta = () => {
                             required
                             /* o onChange é utili em situações que é necessários reagir a cada alteração do input */
                             onChange={handleConfirmarSenhaChange}
+                            className="w-full h-full bg-transparent outline-none border-2 border-white/80 rounded-full max-[400px]:text-[15px] max-sm:text-lg text-xl text-white py-5 px-6 placeholder:text-white pr-24"
                         />
                         <span onClick={() => setMostrarConfirmarSenha(!mostrarConfirmarSenha)}>
-                            {mostrarConfirmarSenha ? <FaEye /> : <FaEyeSlash />} {/* Ícone para mostrar/ocultar confirmação da senha */}
+                            {mostrarConfirmarSenha ? <FaEye className="absolute top-1/2 -translate-y-1/2 right-14 max-sm:text-xl text-2xl text-white cursor-pointer transition-colors ease-in-out duration-300 hover:text-white/70 select-none" /> : <FaEyeSlash className="absolute top-1/2 -translate-y-1/2 right-14 max-sm:text-xl text-2xl text-white cursor-pointer transition-colors ease-in-out duration-300 hover:text-white/70 select-none"/>} {/* Ícone para mostrar/ocultar confirmação da senha */}
                         </span>
-                        <FaLock/>
+                        <FaLock className="absolute right-6 top-1/2 -translate-y-1/2 text-[19px] sm:text-xl text-white"/>
                         {senhaConfirmada === false && (
                             <span style={{ color: "red", fontSize: "0.9rem", marginTop: "1px", display: "block" }}>
                                 As senhas não coincidem.
                             </span>
                         )}
                     </div>
-                    <button type="submit">Criar</button>
+                    <button className="w-full mt-8 py-4 sm:py-[18px] text-white bg-green-700 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.2)] cursor-pointer text-xl sm:text-2xl font-bold transition-colors duration-700 ease-in-out border-2 border-white hover:bg-green-900 hover:text-white" type="submit" >Criar</button>
                 </form>
             </section>
             {modalprofile && <div className="fixed top-0 left-0 w-full h-full duration-100 bg-black/40 z-50" onClick={toggleModal}></div>}

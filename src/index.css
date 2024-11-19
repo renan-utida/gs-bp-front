@@ -104,3 +104,11 @@ body::-webkit-scrollbar-thumb {
 .sem-sombra{
     text-shadow: none;
 }
+
+.image-profile-box:hover img{
+    filter: brightness(0.4);
+}
+
+.image-profile-box:hover a{
+    opacity: 1;
+}
