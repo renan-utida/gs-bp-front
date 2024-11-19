@@ -101,6 +101,10 @@ body::-webkit-scrollbar-thumb {
     text-shadow: black 3px 3px 4px;
 }
 
+.sombra-area-usuario{
+    text-shadow: rgb(1, 90, 0) 3px 3px 10px, rgb(1, 90, 0) -3px -3px 10px;
+}
+
 .sem-sombra{
     text-shadow: none;
 }

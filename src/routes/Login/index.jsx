@@ -39,7 +39,7 @@ const Login = () => {
                 sessionStorage.setItem("usuario", usuario.current.value);
                 sessionStorage.setItem("senha", token);
                 
-                navigate("/quiz"); // Redireciona para o quiz
+                navigate("/area-usuario"); // Redireciona para o quiz
         }else{
             alert("Usuário/Email ou senha inválidos!");
         }

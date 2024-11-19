@@ -8,6 +8,7 @@ import Home from './routes/Home/index.jsx'
 import GeracaoEnergia from './routes/GeracaoEnergia/index.jsx'
 import Login from './routes/Login/index.jsx'
 import CriarConta from './routes/CriarConta/index.jsx'
+import AreaUsuario from './routes/AreaUsuario/index.jsx'
 
 /*Criando a função createBrowserRouter*/
 const router = createBrowserRouter([
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: '/geracao-energia', element: <GeracaoEnergia/>},
       { path: '/login', element: <Login/>},
       { path: '/criar-conta', element: <CriarConta/>},
+      { path: '/area-usuario', element: <AreaUsuario/>},
     ]
   }
 ])

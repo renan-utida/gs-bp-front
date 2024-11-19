@@ -153,7 +153,7 @@ const CriarConta = () => {
                 alert("Conta criada com sucesso!");
 
                 // Redireciona para a página de cadastrar produto
-                navigate("/quiz");
+                navigate("/area-usuario");
             })
             .catch((error) => {
                 console.error(error);

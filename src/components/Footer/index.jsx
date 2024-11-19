@@ -11,7 +11,7 @@ const Footer = () => {
                     <h2 className="text-[33px] sm:text-5xl md:text-6xl lg:text-7xl font-bold">Bright Path</h2>
                     <img className='w-12 sm:w-14 md:w-16 lg:w-20 h-12 sm:h-14 md:h-16 lg:h-20' src={LogoImg} alt="Logo Bright Path" />
                 </Link>
-                <p className=" mt-3 italic text-lg sm:text-2xl md:text-3xl lg:text-4xl">Guiando você para um futuro mais sustentável!</p>
+                <p className=" mt-3 italic text-lg sm:text-xl md:text-2xl lg:text-3xl">Com a Bright Path, cada raio de sol é uma oportunidade para transformar vidas.</p>
                 <div className='flex flex-col sm:flex-row'>
                     <div className='flex flex-col mt-12 sm:w-1/2'>
                         <h3 className='text-[28px] lg:text-4xl text-green-300 mb-3 sm:mb-4 font-bold'>Links Rápidos</h3>
