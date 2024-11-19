@@ -214,8 +214,8 @@ const CriarConta = () => {
 
     return (
         <main className="mt-20 min-h-screen flex justify-center items-start relative bg-criar-conta bg-cover bg-center sombra-login">
-            <div className="absolute inset-0 bg-black/50 bg-gradient-to-b from-black/50 to-black/30"></div>
-            <section className="relative bg-white/10 backdrop-blur-[10px] border-4 border-yellow-500/80 py-8 sm:py-6 xl:py-8 max-[400px]:px-4 px-6 lg:px-8 rounded-2xl my-8 md:my-10 xl:mt-12 xl:mb-16 mx-auto max-[500px]:w-[24rem] max-[400px]:w-72 md:min-w-[25rem] lg:min-w-[30rem] xl:min-w-[37rem]">
+            <div className="absolute inset-0 bg-black/50 bg-gradient-to-b from-black/60 to-black/40"></div>
+            <section className="relative bg-white/10 backdrop-blur-[10px] border-4 border-yellow-500/80 py-8 sm:py-6 xl:py-8 max-[400px]:px-4 px-6 lg:px-8 rounded-2xl my-8 md:my-10 xl:mt-12 xl:mb-16 mx-auto max-[400px]:w-72 max-[500px]:w-[24rem] min-[501px]:min-w-[27rem] md:min-w-[32rem] lg:min-w-[35rem] xl:min-w-[38rem]">
                 <form onSubmit={handleSubmit}>
                     <h1 className="text-4xl sm:text-[40px] md:text-[44px] md:py-2 text-center text-white font-bold">Criar Conta</h1>
                     <div className="flex flex-col items-center mt-2">
@@ -243,7 +243,7 @@ const CriarConta = () => {
                         />
                         {/* Regras*/}
                         {!nomeValido && (
-                            <span style={{ color: "red", fontSize: "0.9rem", marginTop: "1px", display: "block" }}>
+                            <span className="text-red-600 text-[10px] min-[401px]:text-sm sm:text-[15px] lg:text-[17px] text-center block mt-[2px] sm:mt-[1px] lg:mt-[2px] mb-10">
                                 O nome deve conter apenas letras.
                             </span>
                         )}
@@ -260,7 +260,7 @@ const CriarConta = () => {
                             className="w-full h-full bg-transparent outline-none border-2 border-white/80 rounded-full max-[400px]:text-[15px] max-sm:text-lg text-xl text-white py-5 px-6 placeholder:text-white pr-12"
                         />
                         {!sobrenomeValido && (
-                            <span style={{ color: "red", fontSize: "0.9rem", marginTop: "1px", display: "block" }}>
+                            <span className="text-red-600 text-[10px] min-[401px]:text-sm sm:text-[15px] lg:text-[17px] text-center block mt-[2px] sm:mt-[1px] lg:mt-[2px] mb-10">
                                 O sobrenome deve conter apenas letras.
                             </span>
                         )}
@@ -291,7 +291,7 @@ const CriarConta = () => {
                         />
                         <MdEmail className="absolute right-6 top-1/2 -translate-y-1/2 text-[19px] sm:text-xl text-white"/>
                         {!emailValido && (
-                            <span style={{ color: "red", fontSize: "0.9rem", marginTop: "1px", display: "block" }}>
+                            <span className="text-red-600 text-[10px] min-[401px]:text-sm sm:text-[15px] lg:text-[17px] text-center block mt-[2px] sm:mt-[1px] lg:mt-[2px] mb-10">
                                 O email deve conter "@"
                             </span>
                         )}
@@ -312,8 +312,8 @@ const CriarConta = () => {
                         </span>
                         <FaLock className="absolute right-6 top-1/2 -translate-y-1/2 text-[19px] sm:text-xl text-white"/>
                         {senhaValida === false && (
-                            <span style={{ color: "red", fontSize: "0.9rem", marginTop: "1px", display: "block" }}>
-                                Mínimo 8 caracteres, 1 letra maiúscula e 1 número.
+                            <span className="text-red-600 text-[10px] min-[401px]:text-sm sm:text-[15px] lg:text-[17px] text-center block mt-[2px] sm:mt-[1px] lg:mt-[2px] mb-10">
+                                Mínimo 8 caracteres, 1 maiúscula e 1 número.
                             </span>
                         )}
                     </div>
@@ -333,7 +333,7 @@ const CriarConta = () => {
                         </span>
                         <FaLock className="absolute right-6 top-1/2 -translate-y-1/2 text-[19px] sm:text-xl text-white"/>
                         {senhaConfirmada === false && (
-                            <span style={{ color: "red", fontSize: "0.9rem", marginTop: "1px", display: "block" }}>
+                            <span className="text-red-600 text-[10px] min-[401px]:text-sm sm:text-[15px] lg:text-[17px] text-center block mt-[2px] sm:mt-[1px] lg:mt-[2px] mb-10">
                                 As senhas não coincidem.
                             </span>
                         )}
@@ -341,54 +341,54 @@ const CriarConta = () => {
                     <button className="w-full mt-8 py-4 sm:py-[18px] text-white bg-green-700 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.2)] cursor-pointer text-xl sm:text-2xl font-bold transition-colors duration-700 ease-in-out border-2 border-white hover:bg-green-900 hover:text-white" type="submit" >Criar</button>
                 </form>
             </section>
-            {modalprofile && <div className="fixed top-0 left-0 w-full h-full duration-100 bg-black/40 z-50" onClick={toggleModal}></div>}
+            {modalprofile && <div className="fixed top-0 left-0 w-full h-full duration-100 bg-black/60 z-40" onClick={toggleModal}></div>}
             {modalprofile && (
-                <div>
-                    <FaXmark onClick={toggleModal} />
-                    <h3>Selecionar Avatar</h3>
-                    <div>
-                        <div className="avatar">
-                            <img src={selectedImage} alt="Avatar Perfil" />
+                <div className="shadow-modal-conta flex flex-col justify-center fixed mt-16 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-w-72 min-[400px]:min-w-96 min-[530px]:min-w-[28rem] sm:min-w-[32rem] md:min-w-[36rem] lg:min-w-[42rem] xl:min-w-[50rem]">
+                    <FaXmark onClick={toggleModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-5xl cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
+                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32pxs] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left sem-sombra">Selecionar Avatar</h3>
+                    <div className="flex flex-col justify-center items-center sm:mt-2 sm:mb-4 mx-auto">
+                        <div className="max-sm:w-[120px] max-lg:w-[150px] w-[170px] max-sm:h-[120px] max-lg:h-[150px] h-[170px] bg-white rounded-full relative overflow-hidden border-[6px] border-green-800">
+                            <img src={selectedImage} alt="Avatar Perfil" className="absolute w-full h-full object-cover"/>
                         </div>
-                        <div className="sugestao-avatar">
-                            <h4>Sugestões de Avatares</h4>
-                            <div className="sugestao-img">
+                        <div className="flex flex-col mt-4 sm:mt-5 md:mt-7 mb-2 sm:mb-3 md:mb-4 mx-0">
+                            <h4 className="mb-3 text-lg min-[530px]:text-xl sm:text-2xl xl:text-3xl fonte-bold text-white/90 font-bold">Sugestões de Avatares</h4>
+                            <div className="flex flex-row justify-center items-center gap-3 flex-wrap">
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg)}>
-                                    <img src={UsuarioImg} alt="Icone - Avatar" />
+                                    <img src={UsuarioImg} alt="Icone - Avatar" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-2 border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg1)}>
-                                    <img src={UsuarioImg1} alt="Icone - Avatar" />
+                                    <img src={UsuarioImg1} alt="Icone - Avatar" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg2)}>
-                                    <img src={UsuarioImg2} alt="Icone - Avatar" />
+                                    <img src={UsuarioImg2} alt="Icone - Avatar" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg3)}>
-                                    <img src={UsuarioImg3} alt="Icone - Avatar carro formula E desenho" />
+                                    <img src={UsuarioImg3} alt="Icone - Avatar logo Bright Path" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg4)}>
-                                    <img src={UsuarioImg4} alt="Icone - Avatar carro formula E desenho dark" />
+                                    <img src={UsuarioImg4} alt="Icone - Avatar Reciclagem" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg5)}>
-                                    <img src={UsuarioImg5} alt="Icone - Avatar formula E" />
+                                    <img src={UsuarioImg5} alt="Icone - Avatar planeta Terra" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg6)}>
-                                    <img src={UsuarioImg6} alt="Icone - Avatar carro formula E" />
+                                    <img src={UsuarioImg6} alt="Icone - Avatar Sol e Eletricidade" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg7)}>
-                                    <img src={UsuarioImg7} alt="Icone - Avatar carro formula E" />
+                                    <img src={UsuarioImg7} alt="Icone - Avatar Sustentabilidade Lampada fundo verde" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg8)}>
-                                    <img src={UsuarioImg8} alt="Icone - Avatar capacete formula E" />
+                                    <img src={UsuarioImg8} alt="Icone - Avatar Eletricidade renovavel" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg9)}>
-                                    <img src={UsuarioImg9} alt="Icone - Avatar bandeira chegada formula E" />
+                                    <img src={UsuarioImg9} alt="Icone - Avatar Sustentabilidade Lampada fundo branco" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <button className="save-modal-btn" onClick={handleSaveImage}>Salvar</button>
-                        <button className="close-modal-btn" onClick={toggleModal}>Fechar</button>
+                    <div className="flex flex-row justify-center gap-5 items-center my-auto mx-0 border-t-2 border-green-700 pt-4">
+                        <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-green-800 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold" onClick={handleSaveImage}>Salvar</button>
+                        <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-yellow-600 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-yellow-800 font-bold" onClick={toggleModal}>Fechar</button>
                     </div>
                 </div>
             )}
