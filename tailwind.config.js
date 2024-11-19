@@ -13,7 +13,11 @@ export default {
         'geracao-energia': "url('./src/assets/images/background-geracao-energia.png')",
         'login': "url('./src/assets/images/background-login.png')",
         'criar-conta': "url('./src/assets/images/background-criar-conta.png')",
+<<<<<<< HEAD
         'area-usuario': "url('./src/assets/images/backdround-area-usuario.png')",
+=======
+        'sobre' : "url('./src/assets/images/background-sobre.png')"
+>>>>>>> 778d8bfd252780e233377f6886214a5bcf08d739
       },
     },
   },
