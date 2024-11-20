@@ -8,7 +8,7 @@ const Welcome=()=> {
     const [quizState, dispatch] = useContext(QuizContext);
 
     return(
-        <section id="welcome" className='relative mt-5 text-center max-w-2xl text-white'>
+        <section id="welcome" className='relative text-center max-w-2xl text-white'>
             <h2 className='text-[1.9rem] font-bold mb-4 italic'>Seja Bem-Vindo ao nosso Quiz!</h2>
             <p className='text-xl'>Você está preparado para responder 15 perguntas aleatórias relacionadas à <span className='font-bold text-green-300'>Energia Sustentável</span>?</p>
             <h3 className='mt-4 mb-5 text-3xl italic text-green-400  font-bold'>Boa Sorte!</h3>

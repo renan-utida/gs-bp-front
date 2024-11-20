@@ -134,3 +134,27 @@ body::-webkit-scrollbar-thumb {
 .image-profile-box:hover a{
     opacity: 1;
 }
+
+.option.correct{
+    background-color: #0a462a;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.option.correct:hover{
+    background-color: #0a462a;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.option.wrong{
+    background-color: #7D1818;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.option.wrong:hover{
+    background-color: #7D1818;
+    font-weight: bold;
+    opacity: 1;
+}

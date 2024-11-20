@@ -11,10 +11,10 @@ const Option=({option, selectOption, answer}) =>{
 
     return(
         <div 
-            className={`option ${ isCorrect ? "correct" : ""} ${isWrong ? "wrong" : ""}`}
+            className={`option transition-all duration-500 ease-in-out bg-green-700 opacity-100 hover:opacity-85 hover:bg-green-800 rounded-2xl p-4 mb-4 cursor-pointer  ${ isCorrect ? "correct" : ""} ${isWrong ? "wrong" : ""}`}
             onClick={() => !quizState.answerSelected && selectOption()}
         >
-            <p>{option}</p>
+            <p className="mt-1 mx-2 text-[19px]">{option}</p>
         </div>
     )
 }
