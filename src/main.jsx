@@ -26,6 +26,7 @@ const router = createBrowserRouter([
       { path: '/login', element: <Login/>},
       { path: '/criar-conta', element: <CriarConta/>},
       { path: '/area-usuario', element: <AreaUsuario/>},
+      { path: '/quiz', element: <AreaUsuario/>},
       { path: '/sobre', element: <Sobre/>},
     ]
   }
