@@ -97,6 +97,24 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
+#login-menu.dropdown{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0);
+}
+
+#login-menu::before{
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 35px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
 .sombra-login{
     text-shadow: black 3px 3px 4px;
 }

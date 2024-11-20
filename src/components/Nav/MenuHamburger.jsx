@@ -40,7 +40,7 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
     };
 
     return(
-        <div className="flex font-bold text-lg items-center">
+        <div className="flex font-bold text-lg items-center md:mr-[120px]">
             <nav id="nav" className={menuActive ? "active" : ""}>
                 <button 
                     id="btn-menu" 
@@ -65,6 +65,12 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
                             <p className="mb-[2px] max-[400px]:text-base max-[500px]:text-lg text-xl lg:text-2xl">Geração de Energia</p>
                         </Link>
                     </li> 
+                    <li>
+                        <Link to="/sobre" onClick={closeMenu} className="py-6 pl-4 pr-2 sm:pr-3 md:pr-4 md:pl-5 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
+                            <FaCircleInfo className="w-6 min-[500px]:w-7 lg:w-8 h-6 min-[500px]:h-7 lg:h-8 mr-5"/>
+                            <p className="mb-[2px] max-[400px]:text-base max-[500px]:text-lg text-xl lg:text-2xl">Sobre</p>
+                        </Link>    
+                    </li> 
                     {isAuthenticated ? ( 
                         <li>
                             <a onClick={() => {handleLogout(); closeMenu(); logout();}} className="py-6 pl-4 pr-2 sm:pr-3 md:pr-4 md:pl-5 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
@@ -80,12 +86,6 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
                             </Link>
                         </li> 
                     )}
-                        <li>
-                            <Link to="/sobre" onClick={closeMenu} className="py-6 pl-4 pr-2 sm:pr-3 md:pr-4 md:pl-5 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
-                                <FaCircleInfo className="w-6 min-[500px]:w-7 lg:w-8 h-6 min-[500px]:h-7 lg:h-8 mr-5"/>
-                                <p className="mb-[2px] max-[400px]:text-base max-[500px]:text-lg text-xl lg:text-2xl">Sobre</p>
-                            </Link>    
-                        </li> 
                     <li className="p-4">Item 4</li> 
                     <li className="p-4">Item 5</li> 
                 </ul>

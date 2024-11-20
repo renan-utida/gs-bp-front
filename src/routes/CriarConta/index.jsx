@@ -132,7 +132,7 @@ const CriarConta = () => {
         if (nomeValido && sobrenomeValido && emailValido && senhaValida && senhaConfirmada) {
 
             // Envia os dados ao backend
-            fetch(`http://localhost:5001/usuarios/${id ? id :''}`,{
+            fetch(`http://localhost:5002/usuarios/${id ? id :''}`,{
                 method:metodo,
                 headers: {
                     'Content-type':'application/json',
@@ -167,7 +167,7 @@ const CriarConta = () => {
     //Hook- useEffect - realiza o efeito colateral ele carrega os usuarios cadastrados
     useEffect(()=>{
         if(id){
-            fetch(`http://localhost:5001/usuarios/${id}`)
+            fetch(`http://localhost:5002/usuarios/${id}`)
                 .then((resp)=>{
                     return resp.json();
                 })
