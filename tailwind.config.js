@@ -15,6 +15,7 @@ export default {
         'criar-conta': "url('./src/assets/images/background-criar-conta.png')",
         'area-usuario': "url('./src/assets/images/backdround-area-usuario.png')",
         'sobre': "url('./src/assets/images/background-sobre.png')",
+        'quiz': "url('./src/assets/images/background-quiz.png')",
       },
     },
   },

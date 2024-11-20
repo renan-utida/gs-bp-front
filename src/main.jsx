@@ -10,6 +10,7 @@ import Login from './routes/Login/index.jsx'
 import CriarConta from './routes/CriarConta/index.jsx'
 import AreaUsuario from './routes/AreaUsuario/index.jsx'
 import Sobre from './routes/Sobre/index.jsx'
+import Quiz from './routes/Quiz/index.jsx'
 
 /*Criando a função createBrowserRouter*/
 const router = createBrowserRouter([
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       { path: '/login', element: <Login/>},
       { path: '/criar-conta', element: <CriarConta/>},
       { path: '/area-usuario', element: <AreaUsuario/>},
-      { path: '/quiz', element: <AreaUsuario/>},
+      { path: '/quiz', element: <Quiz/>},
       { path: '/sobre', element: <Sobre/>},
     ]
   }
