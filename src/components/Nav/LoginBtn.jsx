@@ -114,7 +114,7 @@ const LoginBtn = ({handleLogout}) => {
             <div id="login-menu" className={`absolute top-[85px] right-[10px] w-[12rem] min-h-24 bg-white shadow-[0px_0px_35px_rgba(0, 0, 0, 0.5)] opacity-0 invisible transform -translate-y-5 transition-all duration-300 ease-linear ${isDropdownOpen ? "dropdown" :""}`}>
                 <ul className="flex flex-col bg-white list-none font-bold">
                     <li className="py-[15px] px-5 bg-white transition-colors duration-200 ease-in-out hover:bg-gray-400">
-                        <Link to='/profile' onClick={handleMenuItemClick} className="text-black flex items-center gap-[10px] cursor-pointer text-base"><FaUser className="w-5 h-5 mr-[0.3rem] mt-[0.1rem] text-black"/>Perfil</Link>
+                        <Link to='/perfil' onClick={handleMenuItemClick} className="text-black flex items-center gap-[10px] cursor-pointer text-base"><FaUser className="w-5 h-5 mr-[0.3rem] mt-[0.1rem] text-black"/>Perfil</Link>
                     </li>
                     <li className="py-[15px] px-5 border-t-[1px] border-black bg-white transition-colors duration-200 ease-in-out hover:bg-gray-400">
                         <Link to="/editar-conta" onClick={handleMenuItemClick} className="text-black flex items-center gap-[10px] cursor-pointer text-base"><FaRegEdit className="w-5 h-5 mr-[0.3rem] mt-[0.1rem] text-black"/>Editar Conta</Link>
