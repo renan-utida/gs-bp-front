@@ -56,7 +56,7 @@ const EditarConta = () => {
             setUsuarioDados(usuarioSalvo);
         } else if (usuarioLogado) {
             const tipo = usuarioLogado.includes("@") ? "email" : "usuario";
-            fetch(`http://localhost:5003/usuarios?${tipo}=${usuarioLogado}`)
+            fetch(`http://localhost:5002/usuarios?${tipo}=${usuarioLogado}`)
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.length > 0) {

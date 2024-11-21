@@ -47,13 +47,13 @@ const Slideshow = () => {
           image: SlideQuiz,
           title: 'Responda ao quiz para verificar seus conhecimentos sobre energia sustentável!',
           subtitle: 'Clique aqui e confira!',
-          link: '/',
+          link: '/quiz',
         },
         {
           image: SlideCalculoEnergetico,
           title: 'Calcule seus gastos energéticos e saiba como você contribui para o nosso planeta!',
           subtitle: 'Clique aqui e confira!',
-          link: '/',
+          link: '/calculo-energetico',
         },
         {
           image: SlideGeracaoEnergia,

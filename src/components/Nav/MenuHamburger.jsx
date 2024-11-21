@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { FaHome } from "react-icons/fa";
-import { FaBolt, FaGamepad } from "react-icons/fa6";
+import { FaBolt, FaCoins, FaGamepad } from "react-icons/fa6";
 import { MdLogin, MdLogout } from "react-icons/md";
 import { FaCircleInfo } from "react-icons/fa6";
 
@@ -42,6 +42,17 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
         }
     };
 
+    const handleCalculoNavigation = () => {
+        if (isAuthenticated) {
+            navigate("/calculo-energetico");
+            closeMenu();
+        } else {
+            alert('Você precisa estar logado para acessar estaa pagina!')
+            navigate("/login");
+            closeMenu();
+        }
+    };
+
     return(
         <div className="flex font-bold text-lg items-center md:mr-[120px]">
             <nav id="nav" className={menuActive ? "active" : ""}>
@@ -75,6 +86,12 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
                         </a>
                     </li>
                     <li>
+                        <a onClick={handleCalculoNavigation} className="py-6 pl-4 pr-2 sm:pr-3 md:pr-4 md:pl-5 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
+                            <FaCoins className="w-6 min-[500px]:w-7 lg:w-8 h-6 min-[500px]:h-7 lg:h-8 mr-5"/>
+                            <p className="mb-[2px] max-[400px]:text-base max-[500px]:text-lg text-xl lg:text-2xl">Cálculo Energético</p>
+                        </a>
+                    </li>
+                    <li>
                         <Link to="/sobre" onClick={closeMenu} className="py-6 pl-4 pr-2 sm:pr-3 md:pr-4 md:pl-5 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
                             <FaCircleInfo className="w-6 min-[500px]:w-7 lg:w-8 h-6 min-[500px]:h-7 lg:h-8 mr-5"/>
                             <p className="mb-[2px] max-[400px]:text-base max-[500px]:text-lg text-xl lg:text-2xl">Sobre</p>
@@ -95,8 +112,6 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
                             </Link>
                         </li> 
                     )}
-                    <li className="p-4">Item 4</li> 
-                    <li className="p-4">Item 5</li> 
                 </ul>
             </nav>
         </div>
