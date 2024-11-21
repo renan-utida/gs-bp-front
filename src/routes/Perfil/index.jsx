@@ -1,6 +1,6 @@
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 
 const Perfil = () => {
 

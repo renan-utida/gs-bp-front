@@ -12,6 +12,7 @@ import AreaUsuario from './routes/AreaUsuario/index.jsx'
 import Sobre from './routes/Sobre/index.jsx'
 import Quiz from './routes/Quiz/index.jsx'
 import Perfil from './routes/Perfil/index.jsx'
+import EditarConta from './routes/EditatConta/index.jsx'
 
 /*Criando a função createBrowserRouter*/
 const router = createBrowserRouter([
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       { path: '/quiz', element: <Quiz/>},
       { path: '/sobre', element: <Sobre/>},
       { path: '/perfil', element: <Perfil/>},
+      { path: '/editar-conta', element: <EditarConta/>},
     ]
   }
 ])
