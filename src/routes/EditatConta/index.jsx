@@ -234,30 +234,30 @@ const EditarConta = () => {
     const { nome, sobrenome, usuario, email, senha, avatar } = usuarioDados;
 
     return(
-        <main className="mt-20 min-h-[calc(100vh-80px)] w-full flex flex-col items-center relative bg-area-usuario bg-cover bg-center sombra-login">
-            <div className="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/50 to-black/40"></div>
-            <h1 className="relative text-white font-bold mt-7 text-[40px]">Editar Conta</h1>
-            <section className="relative border-4 w-[30rem] min-h-96 py-5 px-10 mt-5 mb-20 border-emerald-300 rounded-3xl bg-green-950/70 backdrop-blur-sm text-white shadow-[0px_0px_20px_rgba(255,255,255,0.6)]">
+        <main className="mt-20 min-h-[calc(100vh-80px)] w-full flex flex-col items-center relative bg-editar-conta bg-cover bg-center sombra-login">
+            <div className="absolute inset-0 bg-black/55 bg-gradient-to-b from-black/50 to-black/40"></div>
+            <h1 className="relative text-white font-bold mt-7 text-3xl min-[500px]:text-4xl md:text-[40px]">Editar Conta</h1>
+            <section className="relative border-4 w-[17rem] min-[500px]:w-80 sm:w-96 md:w-[30rem] min-h-96 py-5 sm:py-8 px-6 sm:px-10 mt-5 mb-20 mx-10 border-emerald-300 rounded-3xl bg-green-950/70 backdrop-blur-sm text-white shadow-[0px_0px_20px_rgba(255,255,255,0.6)]">
 
                 {/* Avatar */}
-                <div className="flex flex-col my-[10px] border-b-[1px] border-dashed border-emerald-200">
+                <div className="flex flex-col border-b-[1px] border-dashed border-emerald-200">
                     <div>
-                        <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Avatar:</h2>
+                        <h2 className="text-lg min-[500px]:text-xl sm:text-2xl font-bold text-emerald-400">Avatar:</h2>
                         <div className="flex flex-col items-center">
-                        <img src={usuarioDados.avatar || UsuarioImg} alt="Icone Avatar" className="w-28 min-[500px]:w-[125px] sm:w-[140px] h-28 min-[500px]:h-[125px] sm:h-[140px] rounded-full border-4 border-green-700 object-cover"/>
+                            <img src={usuarioDados.avatar || UsuarioImg} alt="Icone Avatar" className="w-28 min-[500px]:w-[125px] sm:w-[140px] h-28 min-[500px]:h-[125px] sm:h-[140px] rounded-full border-4 border-green-700 object-cover"/>
                         </div>
                     </div>
-                    <a onClick={() => abrirModalConfirmacao("avatar")} className="my-[10px] text-center text-lg font-bold text-emerald-300 cursor-pointer transition-colors duration-500 ease-in-out hover:text-emerald-600">Editar Avatar</a>
+                    <a onClick={() => abrirModalConfirmacao("avatar")} className="my-[10px] text-center text-base md:text-lg lg:text-xl font-bold text-emerald-300 cursor-pointer transition-colors duration-500 ease-in-out hover:text-emerald-600">Editar Avatar</a>
                 </div>
 
                 {/* Nome */}
                 <div className="flex justify-between my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
                         <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Nome:</h2>
-                        <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{nome}</p>
+                        <p className="text-white italic text-[19px] min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{nome}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <FaRegEdit onClick={() => abrirModalConfirmacao("nome")} className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                        <FaRegEdit onClick={() => abrirModalConfirmacao("nome")} className="text-xl sm:text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
                     </div>
                 </div>
 
@@ -265,10 +265,10 @@ const EditarConta = () => {
                 <div className="flex justify-between my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
                         <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Sobrenome:</h2>
-                        <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{sobrenome}</p>
+                        <p className="text-white italic text-[19px] min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{sobrenome}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <FaRegEdit onClick={() => abrirModalConfirmacao("sobrenome")} className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                        <FaRegEdit onClick={() => abrirModalConfirmacao("sobrenome")} className="text-xl sm:text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
                     </div>
                 </div>
 
@@ -276,10 +276,10 @@ const EditarConta = () => {
                 <div className="flex justify-between my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
                         <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Usuário:</h2>
-                        <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{usuario}</p>
+                        <p className="text-white italic text-[19px] min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{usuario}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <FaRegEdit onClick={() => abrirModalConfirmacao("usuario")} className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                        <FaRegEdit onClick={() => abrirModalConfirmacao("usuario")} className="text-xl sm:text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
                     </div>
                 </div>
 
@@ -287,10 +287,10 @@ const EditarConta = () => {
                 <div className="flex justify-between my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
                         <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Email:</h2>
-                        <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{email}</p>
+                        <p className="text-white italic text-[19px] min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{email}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <FaRegEdit onClick={() => abrirModalConfirmacao("email")} className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                        <FaRegEdit onClick={() => abrirModalConfirmacao("email")} className="text-xl sm:text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
                     </div>
                 </div>
 
@@ -298,10 +298,10 @@ const EditarConta = () => {
                 <div className="flex justify-between my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
                         <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Senha:</h2>
-                        <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{"*".repeat(senha.length)}</p>
+                        <p className="text-white italic text-[19px] min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{"*".repeat(senha.length)}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <FaRegEdit onClick={() => abrirModalConfirmacao("senha")} className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                        <FaRegEdit onClick={() => abrirModalConfirmacao("senha")} className="text-xl sm:text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
                     </div>
                 </div>
 
@@ -309,16 +309,16 @@ const EditarConta = () => {
 
             {(modalConfirmacao || modalEdicao || modalEditAvatar) && <div onClick={fecharModal} className="fixed top-0 left-0 w-full h-full duration-100 bg-black/60 z-40"></div>}
             {modalConfirmacao && (
-                <div className="shadow-modal-conta flex flex-col justify-around fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-h-56 min-w-64 min-[400px]:min-w-80 min-[530px]:min-w-[25rem] sm:min-w-[28rem] md:min-w-[34rem] lg:min-w-[39rem] xl:min-w-[45rem]">
+                <div className="shadow-modal-conta flex flex-col justify-around fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 w-auto min-[400px]:min-w-80 min-[530px]:min-w-[25rem] sm:min-w-[32rem] md:min-w-[34rem] lg:min-w-[39rem] xl:min-w-[45rem]">
                     <FaXmark onClick={fecharModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-5xl cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
-                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32pxs] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left font-bold sem-sombra">Gostaria de editar o {campoParaEditar}?</h3>
-                    <div className="flex flex-row justify-center gap-5 items-center my-auto mx-0">
+                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32px] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left font-bold sem-sombra">Gostaria de editar o {campoParaEditar}?</h3>
+                    <div className="flex flex-row justify-center gap-3 sm:gap-5 items-center my-4 mx-0">
                         {campoParaEditar === "avatar" ? (
-                            <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-green-800 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold" onClick={abrirModalEditAvatar}>Sim, obrigado!</button>
+                            <button className="mt-[5px] py-4 sm:py-5 xl:py-6 px-3 sm:px-[15px] md:px-4 xl:px-6 text-lg sm:text-2xl xl:text-[26px] cursor-pointer rounded-xl bg-green-800 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold" onClick={abrirModalEditAvatar}>Sim, obrigado!</button>
                         ) : (
-                            <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-green-800 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold" onClick={abrirModalEdicao}>Sim, obrigado!</button>
+                            <button className="mt-[5px] py-4 sm:py-5 xl:py-6 px-3 sm:px-[15px] md:px-4 xl:px-6 text-lg sm:text-2xl xl:text-[26px] cursor-pointer rounded-xl bg-green-800 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold" onClick={abrirModalEdicao}>Sim, obrigado!</button>
                         )}
-                        <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-yellow-600 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-yellow-800 font-bold" onClick={fecharModal}>Não, obrigado!</button>
+                        <button className="mt-[5px] py-4 sm:py-5 xl:py-6 px-3 sm:px-[15px] md:px-4 xl:px-6 text-lg sm:text-2xl xl:text-[26px] cursor-pointer rounded-xl bg-yellow-600 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-yellow-800 font-bold" onClick={fecharModal}>Não, obrigado!</button>
                     </div>
                 </div>
             )}
@@ -326,15 +326,15 @@ const EditarConta = () => {
             {modalEdicao && (
                 <div className="shadow-modal-conta flex flex-col justify-around fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-h-56 min-w-64 min-[400px]:min-w-80 min-[530px]:min-w-[25rem] sm:min-w-[28rem] md:min-w-[34rem] lg:min-w-[39rem] xl:min-w-[45rem]">
                     <FaXmark onClick={fecharModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-5xl cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
-                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32pxs] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left font-bold sem-sombra">Editar {campoParaEditar}</h3>
+                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32px] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left font-bold sem-sombra">Editar {campoParaEditar}</h3>
                     <label className="w-full mt-2">{campoParaEditar.charAt(0).toUpperCase() + campoParaEditar.slice(1).toLowerCase()} atual:</label>
                     <div className="relative">
                         <input 
                             type={campoParaEditar === "senha" && !mostrarSenhaAtual ? "password" : "text"}
-                            placeholder={`Digite ${campoParaEditar} atual`} 
+                            placeholder={`Digite ${campoParaEditar}`} 
                             value={dadoAtual} 
                             onChange={(e) => setDadoAtual(e.target.value)} 
-                            className="w-full my-2 py-2 pl-2 pr-14 text-lg border-[1px] border-emerald-600 text-black rounded-lg self-center"
+                            className="w-full my-2 py-2 pl-2 pr-14 text-base sm:text-lg border-[1px] border-emerald-600 text-black rounded-lg self-center"
                         />
                         {campoParaEditar === "senha" && (
                             mostrarSenhaAtual ? (
@@ -351,7 +351,7 @@ const EditarConta = () => {
                             placeholder={`Novo ${campoParaEditar}`} 
                             value={novoDado} 
                             onChange={handleNovoDadoChange}  
-                            className="w-full my-2 py-2 pl-2 pr-14 text-lg border-[1px] border-emerald-600 text-black rounded-lg self-center"
+                            className="w-full my-2 py-2 pl-2 pr-14 text-base sm:text-lg border-[1px] border-emerald-600 text-black rounded-lg self-center"
                         />
                         {/* Regras*/}
                         {campoParaEditar === "nome" && !nomeValido && (
@@ -371,7 +371,7 @@ const EditarConta = () => {
                         )}
                         {campoParaEditar === "senha" && !senhaValida && (
                             <span className="text-red-600 text-sm block">
-                                A senha deve ter pelo menos 8 caracteres e deve conter uma letra maiúscula e um número.
+                                A senha deve ter pelo menos 8 caracteres e uma letra maiúscula e um número.
                             </span>
                         )}
 
@@ -393,7 +393,7 @@ const EditarConta = () => {
                                     placeholder="Confirme a nova senha"
                                     value={confirmarNovoDado}
                                     onChange={handleConfirmarNovoDadoChange}
-                                    className="w-full my-2 py-2 pl-2 pr-14 text-lg border-[1px] text-black border-emerald-600 rounded-lg self-center"
+                                    className="w-full my-2 py-2 pl-2 pr-14 text-base sm:text-lg border-[1px] text-black border-emerald-600 rounded-lg self-center"
                                 />
                                 {/* Feedback de confirmação de senha */}
                                 {!senhaConfirmada && (
@@ -416,15 +416,15 @@ const EditarConta = () => {
 
             {modalEditAvatar && <div onClick={fecharModal} className="fixed top-0 left-0 w-full h-full duration-100 bg-black/60 z-40"></div>}
             {modalEditAvatar && (
-                <div className="shadow-modal-conta flex flex-col justify-center fixed mt-16 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-w-72 min-[400px]:min-w-96 min-[530px]:min-w-[28rem] sm:min-w-[32rem] md:min-w-[36rem] lg:min-w-[42rem] xl:min-w-[50rem]">
+                <div className="shadow-modal-conta flex flex-col justify-center fixed my-8 sm:my-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-w-72 min-[400px]:min-w-96 min-[530px]:min-w-[28rem] sm:min-w-[32rem] md:min-w-[36rem] lg:min-w-[42rem] xl:min-w-[50rem]">
                     <FaXmark onClick={fecharModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-5xl cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
-                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32pxs] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left font-bold sem-sombra">Selecionar Avatar</h3>
+                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32px] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left font-bold sem-sombra">Selecionar Avatar</h3>
                     <div className="flex flex-col justify-center items-center sm:mt-2 sm:mb-4 mx-auto">
                         <div className="max-sm:w-[120px] max-lg:w-[150px] w-[170px] max-sm:h-[120px] max-lg:h-[150px] h-[170px] bg-white rounded-full relative overflow-hidden border-[6px] border-green-800">
                             <img src={selectedImage} alt="Avatar Perfil" className="absolute w-full h-full object-cover"/>
                         </div>
                         <div className="flex flex-col mt-4 sm:mt-5 md:mt-7 mb-2 sm:mb-3 md:mb-4 mx-0">
-                            <h4 className="mb-3 text-lg min-[530px]:text-xl sm:text-2xl xl:text-3xl fonte-bold text-white/90 font-bold">Sugestões de Avatares</h4>
+                            <h4 className="mb-3 text-lg min-[530px]:text-xl sm:text-[22px] lg:text-2xl fonte-bold text-white/90 font-bold">Sugestões de Avatares</h4>
                             <div className="flex flex-row justify-center items-center gap-3 flex-wrap">
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg)}>
                                     <img src={UsuarioImg} alt="Icone - Avatar" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-2 border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
