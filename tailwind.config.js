@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        'shadow-modal-conta': '5px 5px 45px rgba(220, 220, 220, 0.4), -5px -5px 45px rgba(220, 220, 220, 0.4)',
+        'modal-conta': '5px 5px 25px rgba(220, 220, 220, 0.4), -5px -5px 25px rgba(220, 220, 220, 0.4)',
       },      
       backgroundImage: {
         'geracao-energia': "url('./src/assets/images/background-geracao-energia.png')",

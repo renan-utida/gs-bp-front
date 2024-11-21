@@ -143,7 +143,7 @@ const EditarConta = () => {
         if (!selectedImage) return;
 
         // Atualizar o avatar no backend
-        fetch(`http://localhost:5003/usuarios/${usuarioDados.id}`, {
+        fetch(`http://localhost:5002/usuarios/${usuarioDados.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -197,7 +197,7 @@ const EditarConta = () => {
             }
             
             // Se o dado atual estiver correto, continue com a atualização
-            fetch(`http://localhost:5003/usuarios/${usuarioDados.id}`, {
+            fetch(`http://localhost:5002/usuarios/${usuarioDados.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -236,8 +236,8 @@ const EditarConta = () => {
     return(
         <main className="mt-20 min-h-[calc(100vh-80px)] w-full flex flex-col items-center relative bg-area-usuario bg-cover bg-center sombra-login">
             <div className="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/50 to-black/40"></div>
-            <h1 className="relative text-white font-bold mt-8 mb-6 text-4xl">Editar Conta</h1>
-            <section className="relative border-4 w-[30rem] min-h-96 py-5 px-10 mt-5 mb-10 border-emerald-300 rounded-3xl bg-green-950/70 backdrop-blur-sm text-white shadow-[0px_0px_20px_rgba(255,255,255,0.6)]">
+            <h1 className="relative text-white font-bold mt-7 text-[40px]">Editar Conta</h1>
+            <section className="relative border-4 w-[30rem] min-h-96 py-5 px-10 mt-5 mb-20 border-emerald-300 rounded-3xl bg-green-950/70 backdrop-blur-sm text-white shadow-[0px_0px_20px_rgba(255,255,255,0.6)]">
 
                 {/* Avatar */}
                 <div className="flex flex-col my-[10px] border-b-[1px] border-dashed border-emerald-200">
@@ -247,7 +247,7 @@ const EditarConta = () => {
                         <img src={usuarioDados.avatar || UsuarioImg} alt="Icone Avatar" className="w-28 min-[500px]:w-[125px] sm:w-[140px] h-28 min-[500px]:h-[125px] sm:h-[140px] rounded-full border-4 border-green-700 object-cover"/>
                         </div>
                     </div>
-                    <a href="#" className="my-[10px] text-center text-lg font-bold text-emerald-300 cursor-pointer transition-colors duration-500 ease-in-out hover:text-emerald-600">Editar Avatar</a>
+                    <a onClick={() => abrirModalConfirmacao("avatar")} className="my-[10px] text-center text-lg font-bold text-emerald-300 cursor-pointer transition-colors duration-500 ease-in-out hover:text-emerald-600">Editar Avatar</a>
                 </div>
 
                 {/* Nome */}
@@ -257,7 +257,7 @@ const EditarConta = () => {
                         <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{nome}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <FaRegEdit className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                        <FaRegEdit onClick={() => abrirModalConfirmacao("nome")} className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
                     </div>
                 </div>
 
@@ -268,7 +268,7 @@ const EditarConta = () => {
                         <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{sobrenome}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <FaRegEdit className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                        <FaRegEdit onClick={() => abrirModalConfirmacao("sobrenome")} className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
                     </div>
                 </div>
 
@@ -279,7 +279,7 @@ const EditarConta = () => {
                         <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{usuario}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <FaRegEdit className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                        <FaRegEdit onClick={() => abrirModalConfirmacao("usuario")} className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
                     </div>
                 </div>
 
@@ -290,7 +290,7 @@ const EditarConta = () => {
                         <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{email}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <FaRegEdit className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                        <FaRegEdit onClick={() => abrirModalConfirmacao("email")} className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
                     </div>
                 </div>
 
@@ -301,163 +301,167 @@ const EditarConta = () => {
                         <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{"*".repeat(senha.length)}</p>
                     </div>
                     <div className="flex flex-col items-center justify-center">
-                        <FaRegEdit className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                        <FaRegEdit onClick={() => abrirModalConfirmacao("senha")} className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
                     </div>
                 </div>
 
             </section>
 
-            {(modalConfirmacao || modalEdicao || modalEditAvatar) && <Overlay />}
+            {(modalConfirmacao || modalEdicao || modalEditAvatar) && <div onClick={fecharModal} className="fixed top-0 left-0 w-full h-full duration-100 bg-black/60 z-40"></div>}
             {modalConfirmacao && (
-                <div>
-                    <FaXmark onClick={fecharModal} />
-                    <h3>Gostaria de editar o {campoParaEditar}?</h3>
-                    <div>
+                <div className="shadow-modal-conta flex flex-col justify-around fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-h-56 min-w-64 min-[400px]:min-w-80 min-[530px]:min-w-[25rem] sm:min-w-[28rem] md:min-w-[34rem] lg:min-w-[39rem] xl:min-w-[45rem]">
+                    <FaXmark onClick={fecharModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-5xl cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
+                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32pxs] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left font-bold sem-sombra">Gostaria de editar o {campoParaEditar}?</h3>
+                    <div className="flex flex-row justify-center gap-5 items-center my-auto mx-0">
                         {campoParaEditar === "avatar" ? (
-                            <button className="modal-btn-sim" onClick={abrirModalEditAvatar}>Sim, obrigado!</button>
+                            <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-green-800 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold" onClick={abrirModalEditAvatar}>Sim, obrigado!</button>
                         ) : (
-                            <button className="modal-btn-sim" onClick={abrirModalEdicao}>Sim, obrigado!</button>
+                            <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-green-800 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold" onClick={abrirModalEdicao}>Sim, obrigado!</button>
                         )}
-                        <button className="modal-btn-nao" onClick={fecharModal}>Não, obrigado!</button>
+                        <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-yellow-600 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-yellow-800 font-bold" onClick={fecharModal}>Não, obrigado!</button>
                     </div>
                 </div>
             )}
 
             {modalEdicao && (
-                <div>
-                    <FaXmark onClick={fecharModal} />
-                    <h3>Editar {campoParaEditar}</h3>
-                    <label>{campoParaEditar.charAt(0).toUpperCase() + campoParaEditar.slice(1).toLowerCase()} atual:</label>
-                    <div style={{position: "relative"}}>
+                <div className="shadow-modal-conta flex flex-col justify-around fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-h-56 min-w-64 min-[400px]:min-w-80 min-[530px]:min-w-[25rem] sm:min-w-[28rem] md:min-w-[34rem] lg:min-w-[39rem] xl:min-w-[45rem]">
+                    <FaXmark onClick={fecharModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-5xl cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
+                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32pxs] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left font-bold sem-sombra">Editar {campoParaEditar}</h3>
+                    <label className="w-full mt-2">{campoParaEditar.charAt(0).toUpperCase() + campoParaEditar.slice(1).toLowerCase()} atual:</label>
+                    <div className="relative">
                         <input 
                             type={campoParaEditar === "senha" && !mostrarSenhaAtual ? "password" : "text"}
                             placeholder={`Digite ${campoParaEditar} atual`} 
                             value={dadoAtual} 
                             onChange={(e) => setDadoAtual(e.target.value)} 
+                            className="w-full my-2 py-2 pl-2 pr-14 text-lg border-[1px] border-emerald-600 text-black rounded-lg self-center"
                         />
                         {campoParaEditar === "senha" && (
                             mostrarSenhaAtual ? (
-                                <FaEye onClick={() => setMostrarSenhaAtual(false)} />
+                                <FaEye onClick={() => setMostrarSenhaAtual(false)} className="absolute top-[20px] right-5 text-2xl text-green-700 cursor-pointer transition-colors ease-in-out duration-300 hover:text-green-900 select-none" />
                             ) : (
-                                <FaEyeSlash onClick={() => setMostrarSenhaAtual(true)} />
+                                <FaEyeSlash onClick={() => setMostrarSenhaAtual(true)} className="absolute top-[20px] right-5 text-2xl text-green-700 cursor-pointer transition-colors ease-in-out duration-300 hover:text-green-900 select-none"/>
                             )
                         )}
                     </div>
-                    <label>Novo {campoParaEditar.charAt(0).toUpperCase() + campoParaEditar.slice(1).toLowerCase()}:</label>
-                    <div style={{position: "relative"}}>
+                    <label className="w-full mt-2">Novo {campoParaEditar.charAt(0).toUpperCase() + campoParaEditar.slice(1).toLowerCase()}:</label>
+                    <div className="relative">
                         <input 
                             type={campoParaEditar === "senha" && !mostrarNovaSenha ? "password" : "text"}
                             placeholder={`Novo ${campoParaEditar}`} 
                             value={novoDado} 
                             onChange={handleNovoDadoChange}  
+                            className="w-full my-2 py-2 pl-2 pr-14 text-lg border-[1px] border-emerald-600 text-black rounded-lg self-center"
                         />
                         {/* Regras*/}
                         {campoParaEditar === "nome" && !nomeValido && (
-                            <span style={{ color: "red", fontSize: "0.9rem", marginTop: "5px", display: "block" }}>
+                            <span className="text-red-600 text-sm mt-1 block">
                                 O nome deve conter apenas letras.
                             </span>
                         )}
                         {campoParaEditar === "sobrenome" && !sobrenomeValido && (
-                            <span style={{ color: "red", fontSize: "0.9rem", marginTop: "5px", display: "block" }}>
+                            <span className="text-red-600 text-sm mt-1 block">
                                 O sobrenome deve conter apenas letras.
                             </span>
                         )}
                         {campoParaEditar === "email" && !emailValido && (
-                            <span style={{ color: "red", fontSize: "0.9rem", marginTop: "5px", display: "block" }}>
+                            <span className="text-red-600 text-sm mt-1 block">
                                 O email deve conter "@"
                             </span>
                         )}
                         {campoParaEditar === "senha" && !senhaValida && (
-                            <span style={{ color: "red", fontSize: "0.9rem", marginTop: "5px", display: "block" }}>
+                            <span className="text-red-600 text-sm block">
                                 A senha deve ter pelo menos 8 caracteres e deve conter uma letra maiúscula e um número.
                             </span>
                         )}
 
                         {campoParaEditar === "senha" && (
                             mostrarNovaSenha ? (
-                                <FaEye onClick={() => setMostrarNovaSenha(false)} />
+                                <FaEye onClick={() => setMostrarNovaSenha(false)} className="absolute top-[20px] right-5 text-2xl text-green-700 cursor-pointer transition-colors ease-in-out duration-300 hover:text-green-900 select-none"/>
                             ) : (
-                                <FaEyeSlash onClick={() => setMostrarNovaSenha(true)} />
+                                <FaEyeSlash onClick={() => setMostrarNovaSenha(true)} className="absolute top-[20px] right-5 text-2xl text-green-700 cursor-pointer transition-colors ease-in-out duration-300 hover:text-green-900 select-none"/>
                             )
                         )}
                     </div>
 
                     {campoParaEditar === "senha" && (
                         <>
-                            <label>Confirmar nova senha:</label>
-                            <div style={{ position: "relative" }}>
+                            <label className="w-full mt-2">Confirmar nova senha:</label>
+                            <div className="relative">
                                 <input 
                                     type={mostrarConfirmacaoSenha ? "text" : "password"}
                                     placeholder="Confirme a nova senha"
                                     value={confirmarNovoDado}
                                     onChange={handleConfirmarNovoDadoChange}
+                                    className="w-full my-2 py-2 pl-2 pr-14 text-lg border-[1px] text-black border-emerald-600 rounded-lg self-center"
                                 />
                                 {/* Feedback de confirmação de senha */}
                                 {!senhaConfirmada && (
-                                    <span style={{ color: "red", fontSize: "0.9rem", marginTop: "5px", display: "block" }}>
+                                    <span className="text-red-600 text-sm mt-1 block">
                                         As senhas não coincidem.
                                     </span>
                                 )}
                                 {mostrarConfirmacaoSenha ? (
-                                    <FaEye onClick={() => setMostrarConfirmacaoSenha(false)} />
+                                    <FaEye onClick={() => setMostrarConfirmacaoSenha(false)} className="absolute top-[20px] right-5 text-2xl text-green-700 cursor-pointer transition-colors ease-in-out duration-300 hover:text-green-900 select-none"/>
                                 ) : (
-                                    <FaEyeSlash onClick={() => setMostrarConfirmacaoSenha(true)} />
+                                    <FaEyeSlash onClick={() => setMostrarConfirmacaoSenha(true)} 
+                                    className="absolute top-[20px] right-5 text-2xl text-green-700 cursor-pointer transition-colors ease-in-out duration-300 hover:text-green-900 select-none"/>
                                 )}
                             </div>
                         </>
                     )}
-                    <button onClick={handleEditar}>Editar</button>
+                    <button onClick={handleEditar} className="my-5 py-[10px] px-[15px] text-lg cursor-pointer rounded-xl bg-green-800 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold">Editar</button>
                 </div>
             )}
 
-            {modalEditAvatar && <div onClick={fecharModal}></div>}
+            {modalEditAvatar && <div onClick={fecharModal} className="fixed top-0 left-0 w-full h-full duration-100 bg-black/60 z-40"></div>}
             {modalEditAvatar && (
-                <div>
-                    <FaXmark onClick={fecharModal} />
-                    <h3>Selecionar Avatar</h3>
-                    <div>
-                        <div className="avatar">
-                            <img src={selectedImage} alt="Avatar Perfil" />
+                <div className="shadow-modal-conta flex flex-col justify-center fixed mt-16 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-w-72 min-[400px]:min-w-96 min-[530px]:min-w-[28rem] sm:min-w-[32rem] md:min-w-[36rem] lg:min-w-[42rem] xl:min-w-[50rem]">
+                    <FaXmark onClick={fecharModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-5xl cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
+                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32pxs] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left font-bold sem-sombra">Selecionar Avatar</h3>
+                    <div className="flex flex-col justify-center items-center sm:mt-2 sm:mb-4 mx-auto">
+                        <div className="max-sm:w-[120px] max-lg:w-[150px] w-[170px] max-sm:h-[120px] max-lg:h-[150px] h-[170px] bg-white rounded-full relative overflow-hidden border-[6px] border-green-800">
+                            <img src={selectedImage} alt="Avatar Perfil" className="absolute w-full h-full object-cover"/>
                         </div>
-                        <div className="sugestao-avatar">
-                            <h4>Sugestões de Avatares</h4>
-                            <div className="sugestao-img">
+                        <div className="flex flex-col mt-4 sm:mt-5 md:mt-7 mb-2 sm:mb-3 md:mb-4 mx-0">
+                            <h4 className="mb-3 text-lg min-[530px]:text-xl sm:text-2xl xl:text-3xl fonte-bold text-white/90 font-bold">Sugestões de Avatares</h4>
+                            <div className="flex flex-row justify-center items-center gap-3 flex-wrap">
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg)}>
-                                    <img src={UsuarioImg} alt="Icone - Avatar" />
+                                    <img src={UsuarioImg} alt="Icone - Avatar" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-2 border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg1)}>
-                                    <img src={UsuarioImg1} alt="Icone - Avatar" />
+                                    <img src={UsuarioImg1} alt="Icone - Avatar" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg2)}>
-                                    <img src={UsuarioImg2} alt="Icone - Avatar" />
+                                    <img src={UsuarioImg2} alt="Icone - Avatar" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg3)}>
-                                    <img src={UsuarioImg3} alt="Icone - Avatar carro formula E desenho" />
+                                    <img src={UsuarioImg3} alt="Icone - Avatar logo Bright Path" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg4)}>
-                                    <img src={UsuarioImg4} alt="Icone - Avatar carro formula E desenho dark" />
+                                    <img src={UsuarioImg4} alt="Icone - Avatar Reciclagem" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg5)}>
-                                    <img src={UsuarioImg5} alt="Icone - Avatar formula E" />
+                                    <img src={UsuarioImg5} alt="Icone - Avatar planeta Terra" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg6)}>
-                                    <img src={UsuarioImg6} alt="Icone - Avatar carro formula E" />
+                                    <img src={UsuarioImg6} alt="Icone - Avatar Sol e Eletricidade" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg7)}>
-                                    <img src={UsuarioImg7} alt="Icone - Avatar carro formula E" />
+                                    <img src={UsuarioImg7} alt="Icone - Avatar Sustentabilidade Lampada fundo verde" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg8)}>
-                                    <img src={UsuarioImg8} alt="Icone - Avatar capacete formula E" />
+                                    <img src={UsuarioImg8} alt="Icone - Avatar Eletricidade renovavel" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                                 <a href="#" onClick={() => handleImageSelect(UsuarioImg9)}>
-                                     <img src={UsuarioImg9} alt="Icone - Avatar bandeira chegada formula E" />
+                                    <img src={UsuarioImg9} alt="Icone - Avatar Sustentabilidade Lampada fundo branco" className="max-[400px]:w-12 w-14 sm:w-16 max-[400px]:h-12 h-14 sm:h-16 rounded-full object-cover my-1 mx-0 bg-white border-[3px] border-green-700 transition-transform duration-500 ease-in-out hover:scale-125"/>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <button className="save-modal-btn" onClick={handleSaveAvatar}>Salvar</button>
-                        <button className="close-modal-btn" onClick={fecharModal}>Fechar</button>
+                    <div className="flex flex-row justify-center gap-5 items-center my-auto mx-0 border-t-2 border-green-700 pt-4">
+                        <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-green-800 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold" onClick={handleSaveAvatar}>Salvar</button>
+                        <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-yellow-600 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-yellow-800 font-bold" onClick={fecharModal}>Fechar</button>
                     </div>
                 </div>
             )}

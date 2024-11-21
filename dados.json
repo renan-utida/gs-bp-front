@@ -17,6 +17,15 @@
       "email": "roger@email.com",
       "senha": "Roger123",
       "avatar": "/src/assets/images/usuario-login9.png"
+    },
+    {
+      "id": "a3b4",
+      "usuario": "Italo123",
+      "nome": "Italo",
+      "sobrenome": "Andrade",
+      "email": "italo@gmail.com",
+      "senha": "Italo123456",
+      "avatar": "/src/assets/images/usuario-login7.png"
     }
   ]
 }
