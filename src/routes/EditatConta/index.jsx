@@ -234,65 +234,75 @@ const EditarConta = () => {
     const { nome, sobrenome, usuario, email, senha, avatar } = usuarioDados;
 
     return(
-        <main className="mt-20 min-h-[calc(100vh-80px)] w-full flex flex-col items-center relative bg-area-usuario bg-cover bg-center">
+        <main className="mt-20 min-h-[calc(100vh-80px)] w-full flex flex-col items-center relative bg-area-usuario bg-cover bg-center sombra-login">
             <div className="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/50 to-black/40"></div>
-            <h1 className="relative text-white">Editar Conta</h1>
-            <section className="relative text-white">
+            <h1 className="relative text-white font-bold mt-8 mb-6 text-4xl">Editar Conta</h1>
+            <section className="relative border-4 w-[30rem] min-h-96 py-5 px-10 mt-5 mb-10 border-emerald-300 rounded-3xl bg-green-950/70 backdrop-blur-sm text-white shadow-[0px_0px_20px_rgba(255,255,255,0.6)]">
 
                 {/* Avatar */}
-                <div>
+                <div className="flex flex-col my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
-                        <h2>Avatar:</h2>
-                        <div>
-                            <img src="" alt="" />
+                        <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Avatar:</h2>
+                        <div className="flex flex-col items-center">
+                        <img src={usuarioDados.avatar || UsuarioImg} alt="Icone Avatar" className="w-28 min-[500px]:w-[125px] sm:w-[140px] h-28 min-[500px]:h-[125px] sm:h-[140px] rounded-full border-4 border-green-700 object-cover"/>
                         </div>
                     </div>
-                    <a href="">Editar</a>
+                    <a href="#" className="my-[10px] text-center text-lg font-bold text-emerald-300 cursor-pointer transition-colors duration-500 ease-in-out hover:text-emerald-600">Editar Avatar</a>
                 </div>
 
                 {/* Nome */}
-                <div>
+                <div className="flex justify-between my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
-                        <h2>Nome:</h2>
-                        <p></p>
+                        <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Nome:</h2>
+                        <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{nome}</p>
                     </div>
-                    <FaRegEdit />
+                    <div className="flex flex-col items-center justify-center">
+                        <FaRegEdit className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                    </div>
                 </div>
 
                 {/* Sobrenome */}  
-                <div>
+                <div className="flex justify-between my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
-                        <h2>Sobrenome:</h2>
-                        <p></p>
+                        <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Sobrenome:</h2>
+                        <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{sobrenome}</p>
                     </div>
-                    <FaRegEdit />
+                    <div className="flex flex-col items-center justify-center">
+                        <FaRegEdit className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                    </div>
                 </div>
 
                 {/* Usuario */}
-                <div>
+                <div className="flex justify-between my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
-                        <h2>Usuário:</h2>
-                        <p></p>
+                        <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Usuário:</h2>
+                        <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{usuario}</p>
                     </div>
-                    <FaRegEdit />
+                    <div className="flex flex-col items-center justify-center">
+                        <FaRegEdit className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                    </div>
                 </div>
 
                 {/* Email */}
-                <div>
+                <div className="flex justify-between my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
-                        <h2>Email:</h2>
-                        <p></p>
+                        <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Email:</h2>
+                        <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{email}</p>
                     </div>
-                    <FaRegEdit />
+                    <div className="flex flex-col items-center justify-center">
+                        <FaRegEdit className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                    </div>
                 </div>
 
                 {/* Senha */}
-                <div>
+                <div className="flex justify-between my-[10px] border-b-[1px] border-dashed border-emerald-200">
                     <div>
-                        <h2>Senha:</h2>
-                        <p></p>
+                        <h2 className="text-base min-[500px]:text-lg sm:text-xl font-bold text-emerald-400">Senha:</h2>
+                        <p className="text-white italic text-lg min-[500px]:text-xl sm:text-2xl font-bold mt-[10px] mb-[15px]">{"*".repeat(senha.length)}</p>
                     </div>
-                    <FaRegEdit />
+                    <div className="flex flex-col items-center justify-center">
+                        <FaRegEdit className="text-2xl cursor-pointer text-green-400 transition-colors duration-500 ease-in-out hover:text-red-600"/>
+                    </div>
                 </div>
 
             </section>
