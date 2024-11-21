@@ -16,6 +16,7 @@ export default {
         'area-usuario': "url('./src/assets/images/backdround-area-usuario.png')",
         'sobre': "url('./src/assets/images/background-sobre.png')",
         'quiz': "url('./src/assets/images/background-quiz.png')",
+        'perfil': "url('./src/assets/images/background-perfil.png')",
       },
     },
   },
