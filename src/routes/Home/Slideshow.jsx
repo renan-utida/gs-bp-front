@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom"
 
 import SlideQuiz from './../../assets/images/slide-quiz.png'
 import SlideCalculoEnergetico from './../../assets/images/slide-calculo-energetico.png'
@@ -8,7 +7,7 @@ import SlideGeracaoEnergia from './../../assets/images/slide-geracao-energia.png
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
 
-const Slideshow = () => {
+const Slideshow = ({ handleRestrictedNavigation }) => {
 
     const [slideIndex, setSlideIndex] = useState(1);
     const totalSlides = 3; // Você pode alterar para mais ou menos slides conforme necessário
@@ -71,7 +70,7 @@ const Slideshow = () => {
                     className={`w-full h-full text-justify relative transition-opacity duration-500 ease-in-out ${slideIndex === index + 1 ? 'opacity-100 visible block' : 'opacity-0 invisible hidden'
                     }`}
                 >
-                    <Link to={slide.link} className='relative block w-full h-full overflow-hidden group'>
+                    <div onClick={() => handleRestrictedNavigation(slide.link)} className='relative block w-full h-full overflow-hidden group'>
                         {/* Container para a imagem */}
                         <div className="w-full h-full">
                             <img 
@@ -91,7 +90,7 @@ const Slideshow = () => {
 
                         {/* Mostra a numeração do slide, exemplo: "1 / 5" */}
                         <div className='absolute top-3 left-3 text-white text-sm'>{`${index + 1} / ${totalSlides}`}</div>
-                    </Link>
+                    </div>
                 </div>
             ))}
 
