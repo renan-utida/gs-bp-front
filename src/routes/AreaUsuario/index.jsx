@@ -13,7 +13,7 @@ const AreaUsuario = () => {
                 <div className="flex flex-col items-center max-sm:w-10/12 max-lg:w-3/4 w-1/2 border-2 border-white rounded-xl p-6 max-[400px]:px-4 text-white bg-green-950/70 shadow-[0px_0px_20px_rgba(255,255,255,0.6)]">
                     <h3 className="text-[23px] min-[500px]:text-2xl md:text-3xl xl:text-4xl text-center font-bold">Calcule seus gastos!</h3>
                     <p className="text-justify mt-3 xl:mt-2 pt-4 xl:pt-3 border-t-2 text-base min-[500px]:text-lg border-white lg:max-xl:mb-2">Na página de cálculo energético, te ajudaremos a descobrir uma média da quantidade de energia elétrica gasta mensalmente, incentivando práticas conscientes.</p>
-                    <Link to='/' className="w-full py-3 mt-5 text-center max-md:text-xl text-2xl font-bold bg-green-600 rounded-3xl border-2 border-white transition-colors duration-500 ease-in-out hover:bg-green-800">Iniciar</Link>
+                    <Link to='/calculo-energetico' className="w-full py-3 mt-5 text-center max-md:text-xl text-2xl font-bold bg-green-600 rounded-3xl border-2 border-white transition-colors duration-500 ease-in-out hover:bg-green-800">Iniciar</Link>
                     <h4 className="w-full mt-8 pt-4 border-t-2 border-white font-bold max-[500px]:text-base max-md:text-lg max-lg:text-xl lg:text-[21px] xl:text-2xl">Status do último cálculo feito:</h4>
                     <p className="text-[15px] min-[500px]:text-base md:text-lg lg:text-[17px] xl:text-lg w-full text-green-500 font-bold mt-1">Tudo Ok</p>
                     <p className="text-[15px] min-[500px]:text-base lg:text-[17px] xl:text-lg w-full text-white font-bold mt-1">Resultado: <span className="text-green-500">1000 kWh/mês</span></p>
