@@ -1,8 +1,26 @@
 import { FaFacebook, FaGithub, FaGoogle, FaInstagram, FaLinkedin, FaRegEnvelope, FaWhatsapp, FaYoutube } from 'react-icons/fa6'
 import LogoImg from './../../assets/images/logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const usuario = sessionStorage.getItem("usuario");
+        setIsAuthenticated(!!usuario);
+    }, []);
+
+    const handleRestrictedNavigation = (path) => {
+        if (isAuthenticated) {
+            navigate(path);
+        } else {
+            alert('Você precisa estar logado para acessar esta página!');
+            navigate("/login");
+        }
+    };
 
     return(
         <footer className="text-white w-full h-auto p-10 sm:px-20 sm:pt-16 bg-[#072b07] border-t-4 border-yellow-500">
@@ -20,13 +38,13 @@ const Footer = () => {
                                 <Link to='/' className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Home</Link>
                             </li>
                             <li className='mb-2 sm:mb-3'>
-                                <Link to='/' className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Cálculo Energético</Link>
+                                <a onClick={() => handleRestrictedNavigation('/calculo-energetico')} className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Cálculo Energético</a>
                             </li>
                             <li className='mb-2 sm:mb-3'>
                                 <Link to='/geracao-energia' className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Geração de Energia</Link>
                             </li>
                             <li className='mb-2 sm:mb-3'>
-                                <Link to='/' className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Quiz</Link>
+                                <a onClick={() => handleRestrictedNavigation('/quiz')} className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Quiz</a>
                             </li>
                         </ul>
                     </div>
