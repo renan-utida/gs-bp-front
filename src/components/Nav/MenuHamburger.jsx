@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { FaHome } from "react-icons/fa";
-import { FaBolt, FaCoins, FaGamepad } from "react-icons/fa6";
+import { FaBolt, FaCoins, FaGamepad, FaUser } from "react-icons/fa6";
 import { MdLogin, MdLogout } from "react-icons/md";
 import { FaCircleInfo } from "react-icons/fa6";
 
@@ -29,6 +29,17 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
         sessionStorage.removeItem("usuarioDados");
         // Adicione qualquer outra chave específica de usuário que esteja no sessionStorage
         window.location.reload(); // Opcional, para garantir que os dados antigos não fiquem na memória
+    };
+
+    const handleUserNavigation = () => {
+        if (isAuthenticated) {
+            navigate("/area-usuario");
+            closeMenu();
+        } else {
+            alert('Você precisa estar logado para acessar o Quiz!')
+            navigate("/login");
+            closeMenu();
+        }
     };
 
     const handleQuizNavigation = () => {
@@ -79,6 +90,12 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
                             <p className="mb-[2px] max-[400px]:text-base max-[500px]:text-lg text-xl lg:text-2xl">Geração de Energia</p>
                         </Link>
                     </li> 
+                    <li>
+                        <a onClick={handleUserNavigation} className="py-6 pl-4 pr-2 sm:pr-3 md:pr-4 md:pl-5 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
+                            <FaUser className="w-6 min-[500px]:w-7 lg:w-8 h-6 min-[500px]:h-7 lg:h-8 mr-5"/>
+                            <p className="mb-[2px] max-[400px]:text-base max-[500px]:text-lg text-xl lg:text-2xl">Área do Usuário</p>
+                        </a>
+                    </li>
                     <li>
                         <a onClick={handleQuizNavigation} className="py-6 pl-4 pr-2 sm:pr-3 md:pr-4 md:pl-5 flex items-center my-[0.2rem] mx-[0.3rem] border-b border-b-green-700 text-white cursor-pointer hover:bg-green-900">
                             <FaGamepad className="w-6 min-[500px]:w-7 lg:w-8 h-6 min-[500px]:h-7 lg:h-8 mr-5"/>
