@@ -569,6 +569,18 @@ const CalculoEnergetico = () => {
                     <FaXmark onClick={toggleModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-5xl cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
                     <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32px] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left sem-sombra">Ver Resultados</h3>
                     <div className="flex flex-col justify-center items-center sm:mt-2 sm:mb-4 mx-auto">
+                        <div>
+                            <h4>Resultado: </h4>
+                            <p>Gasto em kWh/mês: </p>
+                        </div>
+                        <div>
+                            <h4>Risco: </h4>
+                            <p>Você está gastando mais energia do que devia!</p>
+                        </div>
+                        <div>
+                            <h4>Dicas</h4>
+                            <p>Tente economizar mais energia</p>
+                        </div>
                     </div>
                     <div className="flex flex-row justify-center gap-5 items-center my-auto mx-0 border-t-2 border-green-700 pt-4">
                         <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-emerald-700 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-emerald-900 font-bold">Salvar Dados</button>
