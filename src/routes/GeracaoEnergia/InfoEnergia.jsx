@@ -99,14 +99,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}%</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}%</p>
                             </div>
                         </div>
                     </div>
@@ -140,14 +140,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency%}</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}%</p>
                             </div>
                         </div>
                     </div>
@@ -181,14 +181,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}%</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}%</p>
                             </div>
                         </div>
                     </div>
@@ -222,14 +222,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}%</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}%</p>
                             </div>
                         </div>
                     </div>
@@ -263,14 +263,14 @@ const InfoEnergia = () => {
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Armazenamento</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaBoltLightning className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
+                                <p id="efficiencyValue" className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}%</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center mt-4 mb-1">
                             <h4 className="font-bold max-[420px]:text-2xl text-3xl md:text-[29px] lg:text-4xl xl:text-[42px] text-green-800">Produção</h4>
                             <div className="flex flex-row items-center gap-1 mt-2 md:mt-3 lg:mt-4 xl:mt-5 border-2 rounded-md p-1 min-[600px]:p-[6px] lg:p-2 xl:p-3 border-black font-bold bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all ease-in-out duration-700 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.7)]">
                                 <FaWhmcs className="text-yellow-600 text-xl min-[600px]:text-2xl md:text-xl lg:text-2xl xl:text-3xl"/>
-                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}</p>
+                                <p className="max-[420px]:text-base text-xl md:text-lg lg:text-2xl xl:text-3xl">{efficiency}%</p>
                             </div>
                         </div>
                     </div>
