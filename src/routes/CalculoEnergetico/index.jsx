@@ -309,7 +309,7 @@ const produtos = [
     },
     {
         nome: "Lâmpadas",
-        quantidades: ["1", "2", "3", "4", "Não Uso"],
+        quantidades: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "15", "20", "Não Uso"],
         tempos: [
             { label: "5 min/dia", value: "1/12" },
             { label: "10 min/dia", value: "1/6" },
@@ -558,15 +558,38 @@ const CalculoEnergetico = () => {
     const todosCamposPreenchidos = () => {
         return produtos.every(produto => {
             const valores = valoresProdutos[produto.nome] || {};
-            return valores.quantidade && valores.quantidade !== "Não Uso" &&
-                valores.tempo && valores.potencia;
+            if (valores.quantidade && valores.quantidade === "Não Uso"){
+                return true;
+            }
+            return valores.quantidade && valores.tempo && valores.potencia;
         });
     };
+
+    // Definindo cores e mensagens
+    let colorClass = "text-green-500";
+    let bgClass = "bg-green-950"
+    let borderClass = 'border-green-600'
+    let riscoMessage = "Parabéns! Você está gastando energia abaixo do esperado!";
+    let dicasMessage = "Excelente! Continue assim e incentive mais pessoas a economizarem energia, assim como você!";
+
+    if (totalConsumo > 10000) {
+        colorClass = "text-red-500";
+        bgClass = 'bg-red-950';
+        borderClass = 'border-red-600'
+        riscoMessage = "Perigo! Você está gastando muito mais energia do que devia!";
+        dicasMessage = "Atenção! Procure economizar mais energia, para juntos cuidarmos melhor do nosso Planeta!";
+    } else if (totalConsumo > 6000) {
+        colorClass = "text-yellow-500";
+        bgClass = 'bg-yellow-900';
+        borderClass = 'border-yellow-600'
+        riscoMessage = "Cuidado! Você está consumindo energia em um nível moderado-alto.";
+        dicasMessage = "Você está no caminho! Se economizar um pouco mais de energia, você poderá contribuir melhor para o meio ambiente!";
+    }    
 
     return (
         <main className="mt-20 px-20 min-h-screen w-full flex flex-col items-center relative bg-calculo-energetico bg-cover bg-center">
             <div className="absolute inset-0 bg-black/35 bg-gradient-to-b from-black/50 to-black/40"></div>
-            <div className="relative flex flex-col pt-8 lg:pt-10 xl:pt-12 text-center px-5 sm:px-8 md:px-10 xl:px-12">
+            <div className="relative flex flex-col pt-8 lg:pt-9 xl:pt-10 text-center px-5 sm:px-8 md:px-10 xl:px-12">
                 <h2 className="text-yellow-500 text-[28px] sm:text-[33px] font-bold sombra-login md:text-[41px] lg:text-5xl">
                     Cálculo de gasto de energia elétrica
                 </h2>
@@ -575,7 +598,7 @@ const CalculoEnergetico = () => {
                 </p>
             </div>
             <section className="relative text-center text-white my-8 sombra-area-usuario border-4 min-h-96 w-full py-5 sm:py-6 px-6 sm:px-10 mb-20 border-white rounded-3xl bg-green-950/90 backdrop-blur-sm sem-sombra shadow-[0px_0px_10px_rgba(255,255,255,0.6)]">
-                <p className="text-lg">* Respostas de acordo com o gasto da residência inteira! *</p>
+                <p className="text-lg">* Respostas de acordo com o gasto da residência inteira! (3 a 5 pessoas) *</p>
                 <table className="w-full">
                     <thead>
                         <tr className="flex items-center justify-between w-full sombra-login text-green-500 font-bold text-2xl">
@@ -598,33 +621,33 @@ const CalculoEnergetico = () => {
                         ))}
                     </tbody>
                 </table>
-                <div className="flex flex-row justify-evenly mt-10 mb-5">
+                <div className="flex flex-row justify-center gap-10 mt-10 mb-5">
                     <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-green-700 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold" onClick={toggleModal}>Ver Resultado</button>
                     <Link to='/area-usuario' className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-yellow-600 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-yellow-800 font-bold">Fechar</Link>
                 </div>
             </section>
             {modalResultados && <div className="fixed top-0 left-0 w-full h-full duration-100 bg-black/60 z-40" onClick={toggleModal}></div>}
             {modalResultados && (
-                <section className="shadow-modal-conta flex flex-col justify-center fixed mt-16 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-w-72 min-[400px]:min-w-96 min-[530px]:min-w-[28rem] sm:min-w-[32rem] md:min-w-[36rem] lg:min-w-[42rem] xl:min-w-[50rem]">
-                    <div className="flex flex-row w-full border-b-2 border-green-600 pb-1 sm:pb-2 xl:pb-3">
+                <section className={`shadow-modal-conta flex flex-col justify-center fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${bgClass} text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-w-72 min-[400px]:min-w-96 min-[530px]:min-w-[28rem] sm:min-w-[32rem] md:min-w-[36rem] lg:min-w-[42rem] xl:min-w-[50rem]`}>
+                    <div className={`flex flex-row w-full border-b-2 ${borderClass} pb-1 sm:pb-2 xl:pb-3`}>
                         <FaXmark onClick={toggleModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-[42px] cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
-                        <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32px] text-left sem-sombra">Ver Resultado</h3>
+                        <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32px] text-left font-bold sem-sombra">Ver Resultado</h3>
                     </div>
                     <div className="flex flex-col w-full my-5">
                         <div className="flex flex-col items-start">
-                            <h4 className="font-bold text-2xl">Resultado (Gasto em kWh/mês): </h4>
-                            <p className="italic text-2xl mt-1">{totalConsumo.toFixed(2)} kWh / mes</p>
+                            <h4 className={`font-bold text-2xl ${colorClass}`}>Resultado (Gasto em kWh/mês): </h4>
+                            <p className="text-justify text-2xl mt-1">{totalConsumo.toFixed(2)} kWh / mes</p>
                         </div>
                         <div className="flex flex-col items-start mt-3">
-                            <h4 className="font-bold text-2xl">Risco: </h4>
-                            <p className="italic text-2xl mt-1">Você está gastando mais energia do que devia!</p>
+                            <h4 className={`font-bold text-2xl ${colorClass}`}>Risco: </h4>
+                            <p className="text-justify text-2xl mt-1">{riscoMessage}</p>
                         </div>
                         <div className="flex flex-col items-start mt-3">
-                            <h4 className="font-bold text-2xl">Dica(s):</h4>
-                            <p className="italic text-2xl mt-1">Tente economizar mais</p>
+                            <h4 className={`font-bold text-2xl ${colorClass}`}>Dica(s):</h4>
+                            <p className="text-justify text-2xl mt-1">{dicasMessage}</p>
                         </div>
                     </div>
-                    <div className="flex flex-row justify-center gap-5 items-center my-auto mx-0 border-t-2 border-green-700 pt-4">
+                    <div className={`flex flex-row justify-center gap-5 items-center my-auto mx-0 border-t-2 ${borderClass} pt-4`}>
                         <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-emerald-700 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-emerald-900 font-bold">Salvar Dados</button>
                         <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-yellow-600 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-yellow-800 font-bold" onClick={toggleModal}>Fechar</button>
                     </div>
