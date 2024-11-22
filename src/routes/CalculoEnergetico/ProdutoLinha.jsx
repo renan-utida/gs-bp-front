@@ -23,7 +23,7 @@ const ProdutoLinha = ({ nome, quantidades, tempos, potencias }) => {
 
     return (
         <tr className="flex items-center justify-between w-full text-white sombra-login text-xl">
-            <td className="w-full text-left py-3 font-bold text-2xl text-green-200">{nome}</td>
+            <td className="w-full text-left py-3 font-bold text-2xl text-white">{nome}</td>
             <td className="w-full text-left py-3">
                 <select
                     className="text-black"
@@ -31,7 +31,7 @@ const ProdutoLinha = ({ nome, quantidades, tempos, potencias }) => {
                     value={quantidade}
                     onChange={handleQuantidadeChange}
                 >
-                    <option value="" disabled>Quantidade usada</option>
+                    <option value="" disabled>Quantidade</option>
                     {quantidades.map((qtd) => (
                         <option key={qtd} value={qtd}>{qtd}</option>
                     ))}
@@ -45,7 +45,7 @@ const ProdutoLinha = ({ nome, quantidades, tempos, potencias }) => {
                     value={tempo}
                     onChange={(e) => setTempo(e.target.value)}
                 >
-                    <option value="" disabled>Tempo de Uso</option>
+                    <option value="" disabled>Tempo</option>
                     {!isNaoUso && tempos.map((tempo) => (
                         <option key={tempo.value} value={tempo.value}>{tempo.label}</option>
                     ))}

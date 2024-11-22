@@ -504,7 +504,7 @@ const CalculoEnergetico = () => {
 
     return (
         <main className="mt-20 px-20 min-h-screen w-full flex flex-col items-center relative bg-calculo-energetico bg-cover bg-center">
-            <div className="absolute inset-0 bg-black/55 bg-gradient-to-b from-black/50 to-black/40"></div>
+            <div className="absolute inset-0 bg-black/35 bg-gradient-to-b from-black/50 to-black/40"></div>
             <div className="relative flex flex-col pt-8 lg:pt-10 xl:pt-12 text-center px-5 sm:px-8 md:px-10 xl:px-12">
                 <h2 className="text-yellow-500 text-[28px] sm:text-[33px] font-bold sombra-login md:text-[41px] lg:text-5xl">
                     Cálculo de gasto de energia elétrica
@@ -519,7 +519,7 @@ const CalculoEnergetico = () => {
                     <thead>
                         <tr className="flex items-center justify-between w-full sombra-login text-green-500 font-bold text-2xl">
                             <th className="w-full text-left py-3">Produto</th>
-                            <th className="w-full text-left py-3">Quantidade</th>
+                            <th className="w-full text-left py-3">Quantidade usada</th>
                             <th className="w-full text-left py-3">Tempo de uso (cada)</th>
                             <th className="w-full text-left py-3">Potência média (cada)</th>
                         </tr>
@@ -537,7 +537,6 @@ const CalculoEnergetico = () => {
                     </tbody>
                 </table>
                 <div className="flex flex-row justify-evenly mt-10 mb-5">
-                    <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-emerald-700 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-emerald-900 font-bold">Salvar Dados</button>
                     <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-green-700 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold">Ver Resultado</button>
                     <Link to='/area-usuario' className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-yellow-600 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-yellow-800 font-bold">Fechar</Link>
                 </div>
