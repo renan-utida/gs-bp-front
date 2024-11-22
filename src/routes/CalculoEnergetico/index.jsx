@@ -502,9 +502,14 @@ const produtos = [
     },
 ];
 
+const calcularConsumoEnergetico = (quantidade, tempo, potencia) => {
+    return quantidade * tempo * potencia * 30; // Consumo em kWh por mês
+};
+
 const CalculoEnergetico = () => {
 
     const [modalResultados, setModalResultados] = useState(false);
+    const [valoresProdutos, setValoresProdutos] = useState({});
 
     // Desativa o scroll enquanto o modal estiver aberto
     useEffect(() => {
@@ -521,7 +526,41 @@ const CalculoEnergetico = () => {
     }, [modalResultados]);
 
     const toggleModal = () => {
-        setModalResultados(!modalResultados);
+        if (todosCamposPreenchidos()) {
+            setModalResultados(!modalResultados);
+        } else {
+            alert("Atenção, todos os espaços devem ser preenchidos!");
+        }
+    };
+
+    const handleProdutoChange = (nome, quantidade, tempo, potencia) => {
+        setValoresProdutos((prev) => ({
+            ...prev,
+            [nome]: { quantidade, tempo, potencia },
+        }));
+    };
+
+    const calcularTotalConsumo = () => {
+        return Object.values(valoresProdutos).reduce((total, { quantidade, tempo, potencia }) => {
+            const qtd = parseFloat(quantidade);
+            const tmp = parseFloat(tempo);
+            const ptn = parseFloat(potencia);
+
+            if (!isNaN(qtd) && !isNaN(tmp) && !isNaN(ptn)) {
+                return total + calcularConsumoEnergetico(qtd, tmp, ptn);
+            }
+            return total;
+        }, 0);
+    };
+
+    const totalConsumo = calcularTotalConsumo();
+
+    const todosCamposPreenchidos = () => {
+        return produtos.every(produto => {
+            const valores = valoresProdutos[produto.nome] || {};
+            return valores.quantidade && valores.quantidade !== "Não Uso" &&
+                valores.tempo && valores.potencia;
+        });
     };
 
     return (
@@ -554,6 +593,7 @@ const CalculoEnergetico = () => {
                                 quantidades={produto.quantidades}
                                 tempos={produto.tempos}
                                 potencias={produto.potencias}
+                                onChange={handleProdutoChange}
                             />
                         ))}
                     </tbody>
@@ -573,7 +613,7 @@ const CalculoEnergetico = () => {
                     <div className="flex flex-col w-full my-5">
                         <div className="flex flex-col items-start">
                             <h4 className="font-bold text-2xl">Resultado (Gasto em kWh/mês): </h4>
-                            <p className="italic text-2xl mt-1">x kWh / mes</p>
+                            <p className="italic text-2xl mt-1">{totalConsumo.toFixed(2)} kWh / mes</p>
                         </div>
                         <div className="flex flex-col items-start mt-3">
                             <h4 className="font-bold text-2xl">Risco: </h4>

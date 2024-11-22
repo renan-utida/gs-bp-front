@@ -38,13 +38,13 @@ const Footer = () => {
                                 <Link to='/' className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Home</Link>
                             </li>
                             <li className='mb-2 sm:mb-3'>
-                                <a onClick={() => handleRestrictedNavigation('/calculo-energetico')} className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Cálculo Energético</a>
+                                <a onClick={() => handleRestrictedNavigation('/calculo-energetico')} className='cursor-pointer font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Cálculo Energético</a>
                             </li>
                             <li className='mb-2 sm:mb-3'>
                                 <Link to='/geracao-energia' className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Geração de Energia</Link>
                             </li>
                             <li className='mb-2 sm:mb-3'>
-                                <a onClick={() => handleRestrictedNavigation('/quiz')} className='font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Quiz</a>
+                                <a onClick={() => handleRestrictedNavigation('/quiz')} className='cursor-pointer font-bold text-lg md:text-xl lg:text-2xl transition-colors ease-in-out duration-300 hover:text-green-500'>Quiz</a>
                             </li>
                         </ul>
                     </div>
