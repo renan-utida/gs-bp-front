@@ -36,47 +36,47 @@ const ProdutoLinha = ({ nome, quantidades, tempos, potencias, onChange }) => {
     };
 
     return (
-        <tr className="flex items-center justify-between w-full text-white sombra-login text-xl">
-            <td className="w-full text-left py-3 font-bold text-2xl text-white">{nome}</td>
-            <td className="w-full text-left py-3">
+        <tr className="flex items-center justify-between w-full text-white border-y-[1px] py-4 sm:py-6 lg:py-8 border-white border-dashed sombra-login ">
+            <td className="w-full text-left font-bold text-[10px] min-[400px]:text-[13px] min-[500px]:text-sm sm:text-[19px] md:text-xl lg:text-2xl xl:text-[25px] text-white">{nome}</td>
+            <td className="w-full text-left ml-1">
                 <select
-                    className="text-black"
+                    className="text-black text-[10px] min-[400px]:text-sm min-[500px]:text-sm sm:text-[17px] md:text-lg lg:text-xl xl:text-[22px] py-1 sm:py-2 md:py-3 xl:py-4 sm:px-2 xl:px-4 rounded-lg font-bold w-3/5 cursor-pointer"
                     name="quantidade"
                     value={quantidade}
                     onChange={handleQuantidadeChange}
                 >
-                    <option value="" disabled>Quantidade</option>
+                    <option className="text-[10px] min-[400px]:text-sm min-[500px]:text-sm sm:text-base md:text-lg lg:text-xl xl:text-[22px]" value="" disabled>Qntd</option>
                     {quantidades.map((qtd) => (
-                        <option key={qtd} value={qtd}>{qtd}</option>
+                        <option className="text-[10px] min-[400px]:text-sm min-[500px]:text-sm sm:text-base md:text-lg lg:text-xl xl:text-[22px]" key={qtd} value={qtd}>{qtd}</option>
                     ))}
                 </select>
             </td>
-            <td className="w-full text-left py-3">
+            <td className="w-full text-left">
                 <select
-                    className="text-black"
+                    className="text-black text-[10px] min-[400px]:text-sm min-[500px]:text-sm sm:text-[17px] md:text-lg lg:text-xl xl:text-[22px] py-1 sm:py-2 md:py-3 xl:py-4 sm:px-2 xl:px-4 rounded-lg font-bold w-3/5 cursor-pointer"
                     name="tempo"
                     disabled={isNaoUso}
                     value={tempo}
                     onChange={handleTempoChange}
                 >
-                    <option value="" disabled>Tempo</option>
+                    <option className="text-[10px] min-[400px]:text-sm min-[500px]:text-sm sm:text-base md:text-lg lg:text-xl xl:text-[22px] " value="" disabled>Tempo</option>
                     {!isNaoUso && tempos.map((tempo) => (
-                        <option key={tempo.value} value={tempo.value}>{tempo.label}</option>
+                        <option className="text-[10px] min-[400px]:text-sm min-[500px]:text-sm sm:text-base md:text-lg lg:text-xl xl:text-[22px]" key={tempo.value} value={tempo.value}>{tempo.label}</option>
                     ))}
                     {isNaoUso && <option value="Não Uso">Não Uso</option>}
                 </select>
             </td>
-            <td className="w-full text-left py-3">
+            <td className="w-full text-left">
                 <select
-                    className="text-black"
+                    className="text-black text-[10px] min-[400px]:text-sm min-[500px]:text-sm sm:text-[17px] md:text-lg lg:text-xl xl:text-[22px] py-1 sm:py-2 md:py-3 xl:py-4 sm:px-2 xl:px-4 rounded-lg font-bold w-3/5 cursor-pointer"
                     name="potencia"
                     disabled={isNaoUso}
                     value={potencia}
                     onChange={handlePotenciaChange}
                 >
-                    <option value="" disabled>Potência Média</option>
+                    <option className="text-[10px] min-[400px]:text-sm min-[500px]:text-sm sm:text-base md:text-lg lg:text-xl xl:text-[22px]" value="" disabled>Pot.</option>
                     {!isNaoUso && potencias.map((potencia) => (
-                        <option key={potencia.value} value={potencia.value}>{potencia.label}</option>
+                        <option className="text-[10px] min-[400px]:text-sm min-[500px]:text-sm sm:text-base md:text-lg lg:text-xl xl:text-[22px]" key={potencia.value} value={potencia.value}>{potencia.label}</option>
                     ))}
                     {isNaoUso && <option value="Não Uso">Não Uso</option>}
                 </select>
