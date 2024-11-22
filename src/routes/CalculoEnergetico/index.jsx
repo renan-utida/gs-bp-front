@@ -566,20 +566,22 @@ const CalculoEnergetico = () => {
             {modalResultados && <div className="fixed top-0 left-0 w-full h-full duration-100 bg-black/60 z-40" onClick={toggleModal}></div>}
             {modalResultados && (
                 <div className="shadow-modal-conta flex flex-col justify-center fixed mt-16 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-w-72 min-[400px]:min-w-96 min-[530px]:min-w-[28rem] sm:min-w-[32rem] md:min-w-[36rem] lg:min-w-[42rem] xl:min-w-[50rem]">
-                    <FaXmark onClick={toggleModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-5xl cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
-                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32px] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left sem-sombra">Ver Resultados</h3>
-                    <div className="flex flex-col justify-center items-center sm:mt-2 sm:mb-4 mx-auto">
-                        <div>
-                            <h4>Resultado: </h4>
-                            <p>Gasto em kWh/mês: </p>
+                    <div className="flex flex-row w-full border-b-2 border-green-600 pb-1 sm:pb-2 xl:pb-3">
+                        <FaXmark onClick={toggleModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-[42px] cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
+                        <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32px] text-left sem-sombra">Ver Resultado</h3>
+                    </div>
+                    <div className="flex flex-col w-full my-5">
+                        <div className="flex flex-col items-start">
+                            <h4 className="font-bold text-2xl">Resultado (Gasto em kWh/mês): </h4>
+                            <p className="italic text-2xl mt-1">x kWh / mes</p>
                         </div>
-                        <div>
-                            <h4>Risco: </h4>
-                            <p>Você está gastando mais energia do que devia!</p>
+                        <div className="flex flex-col items-start mt-3">
+                            <h4 className="font-bold text-2xl">Risco: </h4>
+                            <p className="italic text-2xl mt-1">Você está gastando mais energia do que devia!</p>
                         </div>
-                        <div>
-                            <h4>Dicas</h4>
-                            <p>Tente economizar mais energia</p>
+                        <div className="flex flex-col items-start mt-3">
+                            <h4 className="font-bold text-2xl">Dica(s):</h4>
+                            <p className="italic text-2xl mt-1">Tente economizar mais</p>
                         </div>
                     </div>
                     <div className="flex flex-row justify-center gap-5 items-center my-auto mx-0 border-t-2 border-green-700 pt-4">
