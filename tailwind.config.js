@@ -18,6 +18,8 @@ export default {
         'quiz': "url('./src/assets/images/background-quiz.png')",
         'perfil': "url('./src/assets/images/background-perfil.png')",
         'editar-conta': "url('./src/assets/images/background-editar-conta.png')",
+        'calculo-energetico': "url('./src/assets/images/background-calculo.png')",
+        'error': "url('./src/assets/images/background-error.png')",
       },
     },
   },

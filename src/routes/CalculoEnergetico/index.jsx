@@ -503,7 +503,7 @@ const produtos = [
 const CalculoEnergetico = () => {
 
     return (
-        <main className="mt-20 px-20 min-h-screen w-full flex flex-col items-center relative bg-area-usuario bg-cover bg-center">
+        <main className="mt-20 px-20 min-h-screen w-full flex flex-col items-center relative bg-calculo-energetico bg-cover bg-center">
             <div className="absolute inset-0 bg-black/55 bg-gradient-to-b from-black/50 to-black/40"></div>
             <div className="relative flex flex-col pt-8 lg:pt-10 xl:pt-12 text-center px-5 sm:px-8 md:px-10 xl:px-12">
                 <h2 className="text-yellow-500 text-[28px] sm:text-[33px] font-bold sombra-login md:text-[41px] lg:text-5xl">
