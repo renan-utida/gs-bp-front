@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import ProdutoLinha from "./ProdutoLinha";
+import { useState, useEffect } from "react";
+import { FaXmark } from "react-icons/fa6";
 
 const produtos = [
     {
@@ -231,7 +233,7 @@ const produtos = [
     },
     {
         nome: "Televisão",
-        quantidades: ["1", "2", "3", "4", "Não Uso"],
+        quantidades: ["1", "2", "3", "4", "5", "6", "Não Uso"],
         tempos: [
             { label: "5 min/dia", value: "1/12" },
             { label: "10 min/dia", value: "1/6" },
@@ -269,7 +271,7 @@ const produtos = [
     },
     {
         nome: "Ferro de Passar",
-        quantidades: ["1", "2", "3", "4", "Não Uso"],
+        quantidades: ["1", "2", "3", "4", "5", "Não Uso"],
         tempos: [
             { label: "5 min/dia", value: "1/12" },
             { label: "10 min/dia", value: "1/6" },
@@ -502,6 +504,26 @@ const produtos = [
 
 const CalculoEnergetico = () => {
 
+    const [modalResultados, setModalResultados] = useState(false);
+
+    // Desativa o scroll enquanto o modal estiver aberto
+    useEffect(() => {
+        if (modalResultados) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    
+        // Limpeza para restaurar o overflow quando o componente desmonta
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [modalResultados]);
+
+    const toggleModal = () => {
+        setModalResultados(!modalResultados);
+    };
+
     return (
         <main className="mt-20 px-20 min-h-screen w-full flex flex-col items-center relative bg-calculo-energetico bg-cover bg-center">
             <div className="absolute inset-0 bg-black/35 bg-gradient-to-b from-black/50 to-black/40"></div>
@@ -537,10 +559,23 @@ const CalculoEnergetico = () => {
                     </tbody>
                 </table>
                 <div className="flex flex-row justify-evenly mt-10 mb-5">
-                    <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-green-700 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold">Ver Resultado</button>
+                    <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-green-700 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-green-900 font-bold" onClick={toggleModal}>Ver Resultado</button>
                     <Link to='/area-usuario' className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-yellow-600 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-yellow-800 font-bold">Fechar</Link>
                 </div>
             </section>
+            {modalResultados && <div className="fixed top-0 left-0 w-full h-full duration-100 bg-black/60 z-40" onClick={toggleModal}></div>}
+            {modalResultados && (
+                <div className="shadow-modal-conta flex flex-col justify-center fixed mt-16 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-950 text-white rounded-3xl p-5 border-[3px] border-white/80 z-50 min-w-72 min-[400px]:min-w-96 min-[530px]:min-w-[28rem] sm:min-w-[32rem] md:min-w-[36rem] lg:min-w-[42rem] xl:min-w-[50rem]">
+                    <FaXmark onClick={toggleModal} className="absolute top-4 right-4 sm:top-3 md:top-4 md:right-4 text-4xl sm:text-5xl cursor-pointer text-yellow-600 transition-colors duration-500 ease-in-out hover:text-yellow-800"/>
+                    <h3 className="text-xl sm:text-2xl md:text-[27px] xl:text-[32px] pb-3 sm:pb-4 xl:pb-5 border-b-2 border-green-600 mb-4 text-left sem-sombra">Ver Resultados</h3>
+                    <div className="flex flex-col justify-center items-center sm:mt-2 sm:mb-4 mx-auto">
+                    </div>
+                    <div className="flex flex-row justify-center gap-5 items-center my-auto mx-0 border-t-2 border-green-700 pt-4">
+                        <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-emerald-700 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-emerald-900 font-bold">Salvar Dados</button>
+                        <button className="mt-[5px] py-[10px] sm:py-3 xl:py-4 px-[15px] sm:px-4 xl:px-6 text-xl sm:text-2xl cursor-pointer rounded-xl bg-yellow-600 border-[1px] sm:border-2 border-white transition-colors duration-300 ease-in-out hover:bg-yellow-800 font-bold" onClick={toggleModal}>Fechar</button>
+                    </div>
+                </div>
+            )}
         </main>
     );
 };
