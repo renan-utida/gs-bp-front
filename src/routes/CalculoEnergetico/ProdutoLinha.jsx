@@ -23,7 +23,7 @@ const ProdutoLinha = ({ nome, quantidades, tempos, potencias }) => {
 
     return (
         <tr className="flex items-center justify-between w-full text-white sombra-login text-xl">
-            <td className="w-full text-left py-3 font-bold text-2xl text-green-300">{nome}</td>
+            <td className="w-full text-left py-3 font-bold text-2xl text-green-200">{nome}</td>
             <td className="w-full text-left py-3">
                 <select
                     className="text-black"
