@@ -11,3 +11,6 @@ Integrantes:
 Murilo Justi- RM 554512	
 Renan Dias Utida - RM 558540	
 Leonardo Rocha Scarpitta - RM 555460
+
+Link do Repositorio GS
+https://github.com/Bright-Path-Team/bp-front

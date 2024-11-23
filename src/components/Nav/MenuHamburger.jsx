@@ -36,7 +36,7 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
             navigate("/area-usuario");
             closeMenu();
         } else {
-            alert('Você precisa estar logado para acessar o Quiz!')
+            alert('Você precisa estar logado para acessar esta pagina!')
             navigate("/login");
             closeMenu();
         }
@@ -47,7 +47,7 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
             navigate("/quiz");
             closeMenu();
         } else {
-            alert('Você precisa estar logado para acessar o Quiz!')
+            alert('Você precisa estar logado para acessar esta pagina!')
             navigate("/login");
             closeMenu();
         }
@@ -58,7 +58,7 @@ const MenuHamburger = ({isAuthenticated, handleLogout}) => {
             navigate("/calculo-energetico");
             closeMenu();
         } else {
-            alert('Você precisa estar logado para acessar estaa pagina!')
+            alert('Você precisa estar logado para acessar esta pagina!')
             navigate("/login");
             closeMenu();
         }

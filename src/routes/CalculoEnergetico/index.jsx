@@ -572,13 +572,13 @@ const CalculoEnergetico = () => {
     let riscoMessage = "Parabéns! Você está gastando energia abaixo do esperado!";
     let dicasMessage = "Excelente! Continue assim e incentive mais pessoas a economizarem energia, assim como você!";
 
-    if (totalConsumo > 650) {
+    if (totalConsumo > 600) {
         colorClass = "text-red-500";
         bgClass = 'bg-red-950';
         borderClass = 'border-red-600'
         riscoMessage = "Perigo! Você está gastando muito mais energia do que devia!";
         dicasMessage = "Atenção! Procure economizar mais energia, para juntos cuidarmos melhor do nosso Planeta!";
-    } else if (totalConsumo > 300) {
+    } else if (totalConsumo > 280) {
         colorClass = "text-yellow-500";
         bgClass = 'bg-yellow-900';
         borderClass = 'border-yellow-600'

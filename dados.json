@@ -1,15 +1,6 @@
 {
   "usuarios": [
     {
-      "id": "a42f",
-      "usuario": "R3N4N",
-      "nome": "Renan",
-      "sobrenome": "Dias",
-      "email": "renan@email.com",
-      "senha": "Renan123456",
-      "avatar": "/src/assets/images/usuario-login5.png"
-    },
-    {
       "id": "759b",
       "usuario": "Roger123",
       "nome": "Roger",
