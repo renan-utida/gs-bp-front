@@ -1,7 +1,5 @@
 # 🌱 Bright Path - Soluções em Energia Sustentável
 
-![Bright Path Logo](https://img.shields.io/badge/Bright%20Path-Energia%20Sustent%C3%A1vel-green?style=for-the-badge)
-
 ## 📋 Descrição do Projeto
 
 O **Bright Path** foi desenvolvido utilizando Vite + ReactJS com o principal objetivo de criar uma página interativa/informativa dedicada à promoção e educação sobre energia sustentável, com foco especial em energia solar, de um sistema de paineis solares que verifica a eficiência energética de duas placas solares (uma a leste e a outra a oeste) e a média da eficiência energética de cada uma delas, como também incentivar as pessoas a adotarem medidas de consumo de energia mais sustentáveis e renováveis!
@@ -224,3 +222,83 @@ Para mais detalhes, consulte o arquivo [LICENSE](./LICENSE).
 ### 🌟 "Com a Bright Path, cada raio de sol é uma oportunidade para transformar vidas."
 
 **Desenvolvido com 💚 para um futuro mais sustentável**
+
+## 📷 ScreenShots
+
+### 🏠 Página Principal
+
+Carousel Automático / Manual
+
+![image](https://github.com/user-attachments/assets/3b27564e-84b5-40c5-9055-f0557dd4673d)
+
+Cards Explorando nossas Soluções Sustentáveis
+
+![image](https://github.com/user-attachments/assets/9fbe63a4-3efd-44ad-a9ac-a4998d5aed07)
+
+Rodapé/Footer
+
+![image](https://github.com/user-attachments/assets/a1cca089-9c3e-40c1-8086-096b537d855d)
+
+---
+
+### 🍔 Menu
+
+Menu Hamburger
+
+![image](https://github.com/user-attachments/assets/55483868-d163-43fc-87c6-d2d4c8fc2955)
+
+---
+
+### 💡 Página Geração Energia
+
+Accordions com 6 bairros aleatórias em SP
+
+![image](https://github.com/user-attachments/assets/9c7483fb-d148-4683-97c1-0947df334719)
+
+Exibindo um bairro
+
+![image](https://github.com/user-attachments/assets/df3ce71e-eb33-4406-ba1e-d22b02fb0255)
+
+---
+
+### 👥 Login e Criar Conta
+
+Tela de Login
+
+![image](https://github.com/user-attachments/assets/16e874d8-9e25-40e7-99f7-5943ce7000d2)
+
+Tela para Criar conta
+
+![image](https://github.com/user-attachments/assets/7f5597e4-91ca-43ef-903b-4c0c60bd3d15)
+
+Exibe as sugestões de Avatares disponíveis
+
+![image](https://github.com/user-attachments/assets/23563fd6-8e36-4aea-8bc7-968ee6a6a16b) 
+
+
+
+---
+
+### 🧩 Página Quiz
+
+![image]()
+
+![image]()
+
+### Página Cálculo Energético
+
+![image]()
+
+![image]()
+
+### Perfil e Editar Conta
+
+![image]()
+
+![image]()
+
+![image]()
+
+
+
+
