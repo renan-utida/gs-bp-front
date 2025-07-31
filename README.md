@@ -281,23 +281,45 @@ Exibe as sugestões de Avatares disponíveis
 
 ### 🧩 Página Quiz
 
-![image]()
+Lobby do Quiz
 
-![image]()
+![image](https://github.com/user-attachments/assets/41b3b479-6d39-454f-aa9c-ddafcd6bf841)
 
-### Página Cálculo Energético
+Respondendo a uma das 15 perguntas do quiz
 
-![image]()
+![image](https://github.com/user-attachments/assets/a531e0dd-e63b-453f-8d55-9486d02b353f)
 
-![image]()
+Resultado final do quiz com quantidade de acertos e pontuação
+
+![image](https://github.com/user-attachments/assets/8d251c86-62dc-4dec-8b66-a062bc986714)
+
+---
+
+### 💲 Página Cálculo Energético ⚡
+
+Página de Cálculo de gasto energéticos de 1 a 3 pessoas, preenchendo a Quantidade usada, Tempo por Dia (cada) e Potência Média (cada) de cada um dos eletrodomésticos citados
+
+![image](https://github.com/user-attachments/assets/a5f6da7a-7d37-4950-97b1-232bfd20e862)
+
+Exibição do Resultado do Cálculo Energético gasto pelo usuário, com Status
+
+![image](https://github.com/user-attachments/assets/70aa4343-fdc8-4c5e-a400-759f327e2daf)
+
+---
 
 ### Perfil e Editar Conta
 
-![image]()
+Exibição dos dados de cadastro do Usuário
 
-![image]()
+![image](https://github.com/user-attachments/assets/fdd69094-3e00-4b27-9036-687f67cef577")
 
-![image]()
+Alterando o Sobrenome do Usuário, informando o sobrenome atual e o novo sobrenome
+
+![image](https://github.com/user-attachments/assets/500b6630-e705-4196-9fc3-c6f1f7b919f4)
+
+Sobrenome alterado com sucesso!
+
+![image](https://github.com/user-attachments/assets/fa8c1b64-c696-4cb9-aae1-cbb4abdbd1f7)
 
 
 
