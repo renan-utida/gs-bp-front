@@ -311,7 +311,8 @@ Exibição do Resultado do Cálculo Energético gasto pelo usuário, com Status
 
 Exibição dos dados de cadastro do Usuário
 
-![image](https://github.com/user-attachments/assets/fdd69094-3e00-4b27-9036-687f67cef577")
+![image](https://github.com/user-attachments/assets/fdd69094-3e00-4b27-9036-687f67cef577)
+
 
 Alterando o Sobrenome do Usuário, informando o sobrenome atual e o novo sobrenome
 
