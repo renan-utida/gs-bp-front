@@ -5,6 +5,7 @@ Esse projeto foi desenvolvido utilizando Vite + ReactJS com o principal objetivo
 
 ## Tecnologias Utilizadas
 - ReactJS (JavaScript);
+- Tailwind;
 - MongoDB (Back End);
 - NodeJS;
 - Express;
